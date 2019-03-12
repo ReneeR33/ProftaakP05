@@ -1,0 +1,10 @@
+C:\Users\nickg\source\repos\FruitMachineDing\FruitMachineDing\bin\Debug\FruitMachineDing.exe.config
+C:\Users\nickg\source\repos\FruitMachineDing\FruitMachineDing\bin\Debug\FruitMachineDing.exe
+C:\Users\nickg\source\repos\FruitMachineDing\FruitMachineDing\bin\Debug\FruitMachineDing.pdb
+C:\Users\nickg\source\repos\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.csprojAssemblyReference.cache
+C:\Users\nickg\source\repos\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.Properties.Resources.resources
+C:\Users\nickg\source\repos\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.csproj.GenerateResource.cache
+C:\Users\nickg\source\repos\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.csproj.CoreCompileInputs.cache
+C:\Users\nickg\source\repos\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.exe
+C:\Users\nickg\source\repos\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.pdb
+C:\Users\nickg\source\repos\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.FruitSnijden.resources
