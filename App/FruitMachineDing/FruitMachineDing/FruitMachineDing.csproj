@@ -68,10 +68,11 @@
     <Compile Include="FruitSnijden.Designer.cs">
       <DependentUpon>FruitSnijden.cs</DependentUpon>
     </Compile>
+    <Compile Include="MessageBuilder.cs" />
     <Compile Include="Portie.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SeriëleCommunicatie.cs" />
+    <Compile Include="Serial.cs" />
     <EmbeddedResource Include="FruitSnijden.resx">
       <DependentUpon>FruitSnijden.cs</DependentUpon>
     </EmbeddedResource>
