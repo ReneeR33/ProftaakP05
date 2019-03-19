@@ -12,7 +12,15 @@ namespace FruitMachineDing
 {
     public partial class FruitSnijden : Form
     {
+<<<<<<< HEAD
         List<string> portie = new List<string>();
+=======
+        //Van de klassen moet je eerst een object aanmaken! 
+        //EN GEEN STATIC GEBRUIKEN
+        Fruitmachine fruitmachine = new Fruitmachine();
+        Persoon persoon = new Persoon();
+
+>>>>>>> 97bd11f47a704738a32ba73ea1b35cc13635ec8c
         public FruitSnijden()
         {
             InitializeComponent();
@@ -30,23 +38,23 @@ namespace FruitMachineDing
 
         private void snijschijfBtn_Click(object sender, EventArgs e)
         {
-            snijschijfInputLbl.Text = Convert.ToString(Fruitmachine.swithCuttingDisk());
+            snijschijfInputLbl.Text = fruitmachine.switchCuttingDisk().ToString();
 
         }
 
         private void BevestigingPanel_VisibleChanged(object sender, EventArgs e)
         {
-            snijschijfInputLbl.Text = Convert.ToString(Fruitmachine.swithCuttingDisk());
+            snijschijfInputLbl.Text = fruitmachine.switchCuttingDisk().ToString();
         }
 
         private void selectedFruitLbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Portie.CalculateCalories();
+            persoon.currentPortie.CalculateCalories();
         }
 
         private void FruitLbx_VisibleChanged(object sender, EventArgs e)
         {
-            Portie.AddToList(FruitLbx.GetItemText(FruitLbx.SelectedIndex));
+            persoon.currentPortie.AddToList(FruitLbx.GetItemText(FruitLbx.SelectedIndex));
         }
 
         private void persoonLbl_Click(object sender, EventArgs e)
@@ -62,7 +70,7 @@ namespace FruitMachineDing
 
         private void FruitLbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Portie.AddToList(FruitLbx.GetItemText(FruitLbx.SelectedIndex));
+            persoon.currentPortie.AddToList(FruitLbx.GetItemText(FruitLbx.SelectedIndex));
         }
 
         private void BevestigingPanel_MouseDoubleClick(object sender, MouseEventArgs e)
