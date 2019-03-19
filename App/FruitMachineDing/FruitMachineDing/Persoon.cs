@@ -10,11 +10,17 @@ namespace FruitMachineDing
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         public List<string> porties = new List<string>();
         public Portie currentPortie { get; private set; } = new Portie();
 
 >>>>>>> 97bd11f47a704738a32ba73ea1b35cc13635ec8c
+=======
+        public List<string> porties = new List<string>();
+        public Portie currentPortie { get; private set; } = new Portie();
+
+>>>>>>> 73dc505dee249d0655ea1c1566273e8d30095dc5
 =======
         public List<string> porties = new List<string>();
         public Portie currentPortie { get; private set; } = new Portie();
@@ -57,6 +63,7 @@ namespace FruitMachineDing
             //vitaminesNodig=sql check vitamines
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             //sql check vitamines die nodig zijn
             if (vitaminesBinnen > vitaminesNodig)
             {
@@ -67,6 +74,8 @@ namespace FruitMachineDing
                 return false;
             }
 =======
+=======
+>>>>>>> 73dc505dee249d0655ea1c1566273e8d30095dc5
 =======
 >>>>>>> 73dc505dee249d0655ea1c1566273e8d30095dc5
             ////sql check vitamines die nodig zijn

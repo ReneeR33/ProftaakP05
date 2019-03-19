@@ -15,6 +15,10 @@ namespace FruitMachineDing
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        List<string> portie = new List<string>();
+>>>>>>> 73dc505dee249d0655ea1c1566273e8d30095dc5
 =======
         List<string> portie = new List<string>();
 >>>>>>> 73dc505dee249d0655ea1c1566273e8d30095dc5

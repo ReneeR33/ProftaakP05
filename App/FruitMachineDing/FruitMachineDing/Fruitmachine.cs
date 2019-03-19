@@ -47,9 +47,13 @@ namespace FruitMachineDing
             }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             return selectedDisk;
 >>>>>>> 97bd11f47a704738a32ba73ea1b35cc13635ec8c
+=======
+            return selectedDisk;
+>>>>>>> 73dc505dee249d0655ea1c1566273e8d30095dc5
 =======
             return selectedDisk;
 >>>>>>> 73dc505dee249d0655ea1c1566273e8d30095dc5
