@@ -12,7 +12,6 @@ namespace FruitMachineDing
 {
     public partial class FruitSnijden : Form
     {
-        string fruit;
         public FruitSnijden()
         {
             InitializeComponent();
