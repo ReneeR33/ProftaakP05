@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 
 namespace FruitMachineDing
 {
-    static class Portie
+    class Portie
     {
-        static int calories=0;
-        public static List<string> portie = new List<string>();
+        //GEEN STATIC GEBRUIKEN GVD NICK
+        private int calories=0;
+        public List<string> fruit = new List<string>();
         
-        public static void AddToList(string fruit)
+        public void AddToList(string Fruit)
         {
-            portie.Add(fruit);
+            fruit.Add(Fruit);
         }
-        public static int CalculateCalories()
+        public int CalculateCalories()
         {
-            foreach(string fruit in portie)
+            foreach(string Fruit in fruit)
             {
 
 //                calories += //sql geef calories van fruit met naam fruit

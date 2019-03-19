@@ -8,6 +8,9 @@ namespace FruitMachineDing
 {
     class Persoon
     {
+        public List<string> porties = new List<string>();
+        public Portie currentPortie { get; private set; } = new Portie();
+
         int vitaminesNodig;
         int vitaminesBinnen;
         string name;
@@ -16,15 +19,17 @@ namespace FruitMachineDing
         public bool CheckVitamins()
         {
             //vitaminesNodig=sql check vitamines
-            //sql check vitamines die nodig zijn
-            if (vitaminesBinnen > vitaminesNodig)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            ////sql check vitamines die nodig zijn
+            //if (vitaminesBinnen > vitaminesNodig)
+            //{
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;
+            //}
+            return (vitaminesBinnen > vitaminesNodig);
+
         }
     }
 }
