@@ -10,13 +10,28 @@ namespace FruitMachineDing
     {
         int vitaminesNodig;
         int vitaminesBinnen;
+        int calorienBinnen;
+        int calorienNodig;
         string name;
         int age;
         int bodyType;
+        public bool CheckCalories()
+        {
+            //calorienNodig= sql check calorien
+            //calorienBinnen = sql check calorien die nodig zijn
+            if (calorienBinnen> calorienNodig)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public bool CheckVitamins()
         {
-            //vitaminesNodig=sql check vitamines
-            //sql check vitamines die nodig zijn
+            //vitaminesBinnen=sql check vitamines
+            //vitaminesNodig=sql check vitamines die nodig zijn
             if (vitaminesBinnen > vitaminesNodig)
             {
                 return true;

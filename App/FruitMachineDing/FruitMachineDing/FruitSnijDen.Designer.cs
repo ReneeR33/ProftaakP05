@@ -112,12 +112,13 @@
             this.BevestigingPanel.Controls.Add(this.snijschijfInputLbl);
             this.BevestigingPanel.Controls.Add(this.snijschijfLbl);
             this.BevestigingPanel.Controls.Add(this.snijschijfBtn);
-            this.BevestigingPanel.Location = new System.Drawing.Point(0, 0);
+            this.BevestigingPanel.Location = new System.Drawing.Point(31, 136);
             this.BevestigingPanel.Name = "BevestigingPanel";
             this.BevestigingPanel.Size = new System.Drawing.Size(893, 438);
             this.BevestigingPanel.TabIndex = 1;
             this.BevestigingPanel.Visible = false;
             this.BevestigingPanel.VisibleChanged += new System.EventHandler(this.BevestigingPanel_VisibleChanged);
+            this.BevestigingPanel.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.BevestigingPanel_MouseDoubleClick);
             // 
             // backBtn
             // 

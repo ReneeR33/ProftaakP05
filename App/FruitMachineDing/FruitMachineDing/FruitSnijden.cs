@@ -12,6 +12,7 @@ namespace FruitMachineDing
 {
     public partial class FruitSnijden : Form
     {
+        List<string> portie = new List<string>();
         public FruitSnijden()
         {
             InitializeComponent();
@@ -62,6 +63,16 @@ namespace FruitMachineDing
         private void FruitLbx_SelectedIndexChanged(object sender, EventArgs e)
         {
             Portie.AddToList(FruitLbx.GetItemText(FruitLbx.SelectedIndex));
+        }
+
+        private void BevestigingPanel_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            portie = Portie.AddToList(FruitLbx.GetItemText(FruitLbx.SelectedIndex));
+            selectedFruitLbx.Items.Clear();
+            foreach (string fruit in portie)
+            {
+                selectedFruitLbx.Items.Add(fruit);
+            }
         }
     }
 }
