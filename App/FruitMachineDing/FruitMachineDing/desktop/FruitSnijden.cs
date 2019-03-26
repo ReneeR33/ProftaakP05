@@ -11,18 +11,13 @@ namespace FruitMachineDing
         Fruitmachine fruitmachine = new Fruitmachine();
         Persoon persoon = new Persoon();
         Portie portie1 = new Portie();
-
         List<string> portie = new List<string>();
+        List<string> fruit = new List<string>();
+
         public string connectionString { get; private set; }
-
-
-
         public FruitSnijden()
         {
             InitializeComponent();
-            FruitLbx.Items.Add("appel");
-            FruitLbx.Items.Add("druif");
-            FruitLbx.Items.Add("peer");
             connectionString = ConfigurationManager.ConnectionStrings["FruitMachineDing.Properties.Settings.FruitDBConnectionString"].ConnectionString;
         }
 
@@ -48,7 +43,7 @@ namespace FruitMachineDing
 
         private void selectedFruitLbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            persoon.currentPortie.CalculateCalories();
+
         }
 
         private void FruitLbx_VisibleChanged(object sender, EventArgs e)
@@ -63,15 +58,13 @@ namespace FruitMachineDing
 
         private void selectedFruitLbx_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            selectedFruitLbx.DataSource = null;
             portie = portie1.RemoveFromList(Convert.ToString(selectedFruitLbx.GetItemText(selectedFruitLbx.SelectedItem)));
             selectedFruitLbx.Items.Clear();
-            selectedFruitLbx.DataSource = portie;
+            selectedFruitLbx.Items.AddRange(portie.ToArray());
         }
 
         private void FruitLbx_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            selectedFruitLbx.DataSource = null;
             portie = portie1.AddToList(FruitLbx.GetItemText(FruitLbx.SelectedItem));
             selectedFruitLbx.Items.Clear();
             selectedFruitLbx.Items.AddRange(portie.ToArray());
