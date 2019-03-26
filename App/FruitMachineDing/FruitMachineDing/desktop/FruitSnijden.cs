@@ -9,6 +9,7 @@ namespace FruitMachineDing
     public partial class FruitSnijden : Form
     {
         public string connectionString { get; private set; }
+
         Fruitmachine fruitmachine = new Fruitmachine();
         Persoon persoon = new Persoon();
         Portie portie1 = new Portie();
@@ -68,6 +69,11 @@ namespace FruitMachineDing
             portie = portie1.AddToList(FruitLbx.GetItemText(FruitLbx.SelectedItem));
             selectedFruitLbx.Items.Clear();
             selectedFruitLbx.Items.AddRange(portie.ToArray());
+        }
+
+        private void FruitSnijden_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
