@@ -8,9 +8,9 @@ namespace FruitMachineDing
 {
     class Portie
     {
-        private int calories=0;
+        private int calories = 0;
         List<string> portie = new List<string>();
-        
+
         public List<string> AddToList(string Fruit)
         {
             portie.Add(Fruit);
@@ -19,7 +19,7 @@ namespace FruitMachineDing
 
         public int CalculateCalories()
         {
-            foreach(string fruit in portie)
+            foreach (string fruit in portie)
             {
                 //sql get calories 
                 //calories += //sql geef calories van fruit met naam fruit 
@@ -29,11 +29,10 @@ namespace FruitMachineDing
         public List<string> RemoveFromList(string _fruit)
         {
 
-                if (portie.Contains(_fruit))
-                {
-                    portie.RemoveAt(portie.IndexOf(_fruit));
-
-                }
+            if (portie.Contains(_fruit))
+            {
+                portie.RemoveAt(portie.IndexOf(_fruit));
+            }
             return portie;
         }
     }
