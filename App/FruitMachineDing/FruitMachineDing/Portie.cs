@@ -9,8 +9,31 @@ namespace FruitMachineDing
 {
     class Portie
     {
-        List<string> portie = new List<string>();
 
+        List<string> portie = new List<string>();
+        List<string> fruit = new List<string>();
+        
+
+      /*  public List<string> GiveFruit(SqlConnection connectionString)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT ", connectionString);
+            SqlConnection conn = new SqlConnection(connectionString);
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+
+                
+
+                fruit.Clear();
+                conn.Open();
+                while (reader.Read())
+                {
+                     = reader.GetString(0);
+                    conn.Close();
+                    return ;
+                }
+                conn.Open();
+            }
+        }*/
         public List<string> AddToList(string Fruit)
         {
             portie.Add(Fruit);

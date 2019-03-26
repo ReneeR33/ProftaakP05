@@ -455,6 +455,7 @@
             this.MinimumSize = new System.Drawing.Size(919, 510);
             this.Name = "FruitSnijden";
             this.Text = "Fruit snijden";
+            this.Load += new System.EventHandler(this.FruitSnijden_Load);
             this.FruitSelectTab.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

@@ -9,13 +9,13 @@ namespace FruitMachineDing
     public partial class FruitSnijden : Form
     {
         public string connectionString { get; private set; }
+
         Fruitmachine fruitmachine = new Fruitmachine();
         Persoon persoon = new Persoon();
         Portie portie1 = new Portie();
         List<string> portie = new List<string>();
         List<string> fruit = new List<string>();
 
-        public string connectionString { get; private set; }
         public FruitSnijden()
         {
             InitializeComponent();
@@ -69,6 +69,11 @@ namespace FruitMachineDing
             portie = portie1.AddToList(FruitLbx.GetItemText(FruitLbx.SelectedItem));
             selectedFruitLbx.Items.Clear();
             selectedFruitLbx.Items.AddRange(portie.ToArray());
+        }
+
+        private void FruitSnijden_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
