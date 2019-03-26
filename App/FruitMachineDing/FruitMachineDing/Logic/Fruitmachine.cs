@@ -8,7 +8,6 @@ namespace FruitMachineDing
 {
     class Fruitmachine
     {
-        //Geef de disks een naam, en gebruik deze in plaats van een int
         public enum disk
         {
             disk1 = 1,
@@ -23,23 +22,6 @@ namespace FruitMachineDing
         
         public disk switchCuttingDisk()
         {
-            //Zeg Nick wat is dit? 
-
-            //if (selectedDisk == 1)
-            //{
-            //    selectedDisk = 2;
-            //    return 2;
-            //}
-            //else if (selectedDisk == 2)
-            //{
-            //    selectedDisk = 3;
-            //    return 3;
-            //}
-            //else
-            //{
-            //    selectedDisk = 1;
-            //    return 1;
-            //}
             int nextValue = (int)SelectedDisk + 1;
             if (nextValue > 3)
             {

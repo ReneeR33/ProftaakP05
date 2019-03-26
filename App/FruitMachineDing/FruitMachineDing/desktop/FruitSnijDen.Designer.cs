@@ -112,13 +112,12 @@
             this.BevestigingPanel.Controls.Add(this.snijschijfInputLbl);
             this.BevestigingPanel.Controls.Add(this.snijschijfLbl);
             this.BevestigingPanel.Controls.Add(this.snijschijfBtn);
-            this.BevestigingPanel.Location = new System.Drawing.Point(31, 136);
+            this.BevestigingPanel.Location = new System.Drawing.Point(852, 16);
             this.BevestigingPanel.Name = "BevestigingPanel";
             this.BevestigingPanel.Size = new System.Drawing.Size(893, 438);
             this.BevestigingPanel.TabIndex = 1;
             this.BevestigingPanel.Visible = false;
             this.BevestigingPanel.VisibleChanged += new System.EventHandler(this.BevestigingPanel_VisibleChanged);
-            this.BevestigingPanel.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.BevestigingPanel_MouseDoubleClick);
             // 
             // backBtn
             // 
@@ -184,7 +183,6 @@
             this.selectedFruitLbl.Size = new System.Drawing.Size(125, 17);
             this.selectedFruitLbl.TabIndex = 8;
             this.selectedFruitLbl.Text = "Geselecteerd fruit:";
-            this.selectedFruitLbl.Click += new System.EventHandler(this.selectedFruit_Click);
             // 
             // fruitLbl
             // 
@@ -241,6 +239,7 @@
             this.selectedFruitLbx.Size = new System.Drawing.Size(250, 356);
             this.selectedFruitLbx.TabIndex = 2;
             this.selectedFruitLbx.SelectedIndexChanged += new System.EventHandler(this.selectedFruitLbx_SelectedIndexChanged);
+            this.selectedFruitLbx.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.selectedFruitLbx_MouseDoubleClick);
             // 
             // FruitLbx
             // 
@@ -248,11 +247,11 @@
             this.FruitLbx.ItemHeight = 16;
             this.FruitLbx.Location = new System.Drawing.Point(6, 70);
             this.FruitLbx.Name = "FruitLbx";
-            this.FruitLbx.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.FruitLbx.Size = new System.Drawing.Size(250, 356);
             this.FruitLbx.TabIndex = 1;
             this.FruitLbx.SelectedIndexChanged += new System.EventHandler(this.FruitLbx_SelectedIndexChanged);
             this.FruitLbx.VisibleChanged += new System.EventHandler(this.FruitLbx_VisibleChanged);
+            this.FruitLbx.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.FruitLbx_MouseDoubleClick);
             // 
             // persoonLbl
             // 
@@ -262,7 +261,6 @@
             this.persoonLbl.Size = new System.Drawing.Size(61, 17);
             this.persoonLbl.TabIndex = 0;
             this.persoonLbl.Text = "Persoon";
-            this.persoonLbl.Click += new System.EventHandler(this.persoonLbl_Click);
             // 
             // tabPage2
             // 
