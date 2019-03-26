@@ -7,16 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace FruitMachineDing
 {
     public partial class FruitSnijden : Form
     {
+        public string connectionString { get; private set; }
         Portie portie1 = new Portie();
 
         List<string> portie = new List<string>();
         //Van de klassen moet je eerst een object aanmaken! 
-        //EN GEEN STATIC GEBRUIKEN
+        //EN Go fuck yourself
         Fruitmachine fruitmachine = new Fruitmachine();
 
         Persoon persoon = new Persoon();
@@ -24,6 +27,7 @@ namespace FruitMachineDing
         public FruitSnijden()
         {
             InitializeComponent();
+            connectionString = ConfigurationManager.ConnectionStrings["FruitMachineDing.Properties.Settings.FruitDBConnectionString"].ConnectionString;
         }
 
         private void BevestigKnop_Click(object sender, EventArgs e)
