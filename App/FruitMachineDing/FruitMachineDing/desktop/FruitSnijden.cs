@@ -49,12 +49,12 @@ namespace FruitMachineDing
 
         private void FruitLbx_VisibleChanged(object sender, EventArgs e)
         {
-            persoon.currentPortie.AddToList(FruitLbx.GetItemText(FruitLbx.SelectedIndex));
+            //persoon.currentPortie.AddToList(FruitLbx.GetItemText(FruitLbx.SelectedIndex));
         }
 
         private void FruitLbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            persoon.currentPortie.AddToList(FruitLbx.GetItemText(FruitLbx.SelectedIndex));
+            //persoon.currentPortie.AddToList(FruitLbx.GetItemText(FruitLbx.SelectedIndex));
         }
 
         private void selectedFruitLbx_MouseDoubleClick(object sender, MouseEventArgs e)
