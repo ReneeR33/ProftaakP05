@@ -13,10 +13,16 @@ namespace FruitMachineDing
         Portie portie1 = new Portie();
 
         List<string> portie = new List<string>();
+        public string connectionString { get; private set; }
+
+
 
         public FruitSnijden()
         {
             InitializeComponent();
+            FruitLbx.Items.Add("appel");
+            FruitLbx.Items.Add("druif");
+            FruitLbx.Items.Add("peer");
             connectionString = ConfigurationManager.ConnectionStrings["FruitMachineDing.Properties.Settings.FruitDBConnectionString"].ConnectionString;
         }
 
