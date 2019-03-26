@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace FruitMachineDing
 {
@@ -15,9 +17,7 @@ namespace FruitMachineDing
         public FruitSnijden()
         {
             InitializeComponent();
-            FruitLbx.Items.Add("appel");
-            FruitLbx.Items.Add("druif");
-            FruitLbx.Items.Add("peer");
+            connectionString = ConfigurationManager.ConnectionStrings["FruitMachineDing.Properties.Settings.FruitDBConnectionString"].ConnectionString;
         }
 
         private void BevestigKnop_Click(object sender, EventArgs e)
