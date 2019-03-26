@@ -18,3 +18,15 @@ C:\Users\nickg\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDin
 C:\Users\nickg\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.csproj.CoreCompileInputs.cache
 C:\Users\nickg\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.exe
 C:\Users\nickg\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.pdb
+D:\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.csprojAssemblyReference.cache
+D:\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.FruitSnijden.resources
+D:\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.Properties.Resources.resources
+D:\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.csproj.GenerateResource.cache
+D:\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.csproj.CoreCompileInputs.cache
+D:\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.exe
+D:\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.pdb
+D:\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\bin\Debug\FruitDB.mdf
+D:\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\bin\Debug\FruitDB_log.ldf
+D:\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\bin\Debug\FruitMachineDing.exe.config
+D:\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\bin\Debug\FruitMachineDing.exe
+D:\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\bin\Debug\FruitMachineDing.pdb

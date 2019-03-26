@@ -12,9 +12,10 @@ namespace FruitMachineDing
         private int calories=0;
         public List<string> fruit = new List<string>();
         
-        public void AddToList(string Fruit)
+        public List<string> AddToList(string Fruit)
         {
             fruit.Add(Fruit);
+            return fruit;
         }
 
         public int CalculateCalories()
