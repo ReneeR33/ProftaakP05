@@ -75,7 +75,6 @@
       <DependentUpon>FruitSnijden.cs</DependentUpon>
     </Compile>
     <Compile Include="Logic\MessageBuilder.cs" />
-    <Compile Include="dal\Persoon.cs" />
     <Compile Include="Portie.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
