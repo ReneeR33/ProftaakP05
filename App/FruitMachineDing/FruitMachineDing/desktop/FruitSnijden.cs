@@ -15,6 +15,25 @@ namespace FruitMachineDing
         List<string> portie = new List<string>();
         List<string> fruit = new List<string>();
 
+        //Waar is de persoon klasse?
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+
         public FruitSnijden()
         {
             InitializeComponent();
