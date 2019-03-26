@@ -18,6 +18,9 @@ namespace FruitMachineDing
         public FruitSnijden()
         {
             InitializeComponent();
+            FruitLbx.Items.Add("appel");
+            FruitLbx.Items.Add("druif");
+            FruitLbx.Items.Add("peer");
             connectionString = ConfigurationManager.ConnectionStrings["FruitMachineDing.Properties.Settings.FruitDBConnectionString"].ConnectionString;
         }
 
