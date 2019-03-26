@@ -30,3 +30,5 @@ D:\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\bin\Debug\
 D:\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\bin\Debug\FruitMachineDing.exe.config
 D:\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\bin\Debug\FruitMachineDing.exe
 D:\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\bin\Debug\FruitMachineDing.pdb
+C:\Users\nickg\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\bin\Debug\dal\FruitDB.mdf
+C:\Users\nickg\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\bin\Debug\dal\FruitDB_log.ldf
