@@ -8,6 +8,7 @@ namespace FruitMachineDing
 {
     public partial class FruitSnijden : Form
     {
+        public string connectionString { get; private set; }
         Fruitmachine fruitmachine = new Fruitmachine();
         Persoon persoon = new Persoon();
         Portie portie1 = new Portie();
