@@ -40,8 +40,6 @@
             this.selectedFruitLbl = new System.Windows.Forms.Label();
             this.fruitLbl = new System.Windows.Forms.Label();
             this.BevestigKnop = new System.Windows.Forms.Button();
-            this.calorieAmtLbl = new System.Windows.Forms.Label();
-            this.calorieLbl = new System.Windows.Forms.Label();
             this.vitamineLbx = new System.Windows.Forms.ListBox();
             this.selectedFruitLbx = new System.Windows.Forms.ListBox();
             this.FruitLbx = new System.Windows.Forms.ListBox();
@@ -91,8 +89,6 @@
             this.tabPage1.Controls.Add(this.selectedFruitLbl);
             this.tabPage1.Controls.Add(this.fruitLbl);
             this.tabPage1.Controls.Add(this.BevestigKnop);
-            this.tabPage1.Controls.Add(this.calorieAmtLbl);
-            this.tabPage1.Controls.Add(this.calorieLbl);
             this.tabPage1.Controls.Add(this.vitamineLbx);
             this.tabPage1.Controls.Add(this.selectedFruitLbx);
             this.tabPage1.Controls.Add(this.FruitLbx);
@@ -202,24 +198,6 @@
             this.BevestigKnop.Text = "bevestig";
             this.BevestigKnop.UseVisualStyleBackColor = true;
             this.BevestigKnop.Click += new System.EventHandler(this.BevestigKnop_Click);
-            // 
-            // calorieAmtLbl
-            // 
-            this.calorieAmtLbl.AutoSize = true;
-            this.calorieAmtLbl.Location = new System.Drawing.Point(649, 3);
-            this.calorieAmtLbl.Name = "calorieAmtLbl";
-            this.calorieAmtLbl.Size = new System.Drawing.Size(31, 17);
-            this.calorieAmtLbl.TabIndex = 5;
-            this.calorieAmtLbl.Text = "test";
-            // 
-            // calorieLbl
-            // 
-            this.calorieLbl.AutoSize = true;
-            this.calorieLbl.Location = new System.Drawing.Point(579, 3);
-            this.calorieLbl.Name = "calorieLbl";
-            this.calorieLbl.Size = new System.Drawing.Size(64, 17);
-            this.calorieLbl.TabIndex = 4;
-            this.calorieLbl.Text = "Caloriën:";
             // 
             // vitamineLbx
             // 
@@ -500,8 +478,6 @@
         private System.Windows.Forms.ListBox FruitLbx;
         private System.Windows.Forms.Label persoonLbl;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Label calorieAmtLbl;
-        private System.Windows.Forms.Label calorieLbl;
         private System.Windows.Forms.Button BevestigKnop;
         private System.Windows.Forms.Label VerzadigdInputLbl;
         private System.Windows.Forms.Label geslachtInputLbl;
