@@ -15,6 +15,7 @@ namespace FruitMachineDing
         List<string> portie = new List<string>();
         List<string> fruit = new List<string>();
 
+        public string connectionString { get; private set; }
         public FruitSnijden()
         {
             InitializeComponent();
