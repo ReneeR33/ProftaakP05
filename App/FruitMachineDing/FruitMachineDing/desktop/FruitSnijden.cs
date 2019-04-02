@@ -8,37 +8,17 @@ namespace FruitMachineDing
 {
     public partial class FruitSnijden : Form
     {
-        public SqlConnection connectionString { get; private set; }
+        public string connectionString;
 
         Fruitmachine fruitmachine = new Fruitmachine();
         Portie portie1 = new Portie();
         List<string> portie = new List<string>();
-        List<string> fruit = new List<string>();
-
-        //Waar is de persoon klasse?
-        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
-        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
-        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
-        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
-        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
-        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
-        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
-        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
-        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
-        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
-        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
-        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
-        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
-        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
-        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
-        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
-        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
-        //Renee, word volwassen.        
+        List<string> fruit = new List<string>();      
 
         public FruitSnijden()
         {
             InitializeComponent();
-            //connectionString = ConfigurationManager.ConnectionStrings["FruitMachineDing.Properties.Settings.FruitDBConnectionString"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["FruitMachineDing.Properties.Settings.FruitDBConnectionString"].ConnectionString;
         }
 
         private void BevestigKnop_Click(object sender, EventArgs e)
