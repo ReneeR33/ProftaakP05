@@ -29,6 +29,7 @@ namespace FruitMachineDing
                 }
 
             }
+            return fruit;
         }
 
         public List<string> AddToList(string Fruit)
