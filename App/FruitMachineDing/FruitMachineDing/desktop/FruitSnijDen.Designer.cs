@@ -51,7 +51,7 @@
             this.NaamInputLbl = new System.Windows.Forms.Label();
             this.leeftijdLbl = new System.Windows.Forms.Label();
             this.naamLbl = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.PersoonLbx = new System.Windows.Forms.ListBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.fruitInfoLbl = new System.Windows.Forms.Label();
             this.voedingswaardeInputLbl = new System.Windows.Forms.Label();
@@ -267,7 +267,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 17);
             this.label4.TabIndex = 12;
-            this.label4.Text = "personen:";
+            this.label4.Text = "Personen:";
             // 
             // button1
             // 
@@ -317,7 +317,7 @@
             this.naamLbl.TabIndex = 1;
             this.naamLbl.Text = "Naam:";
             // 
-            // listBox1
+            // PersoonLbx
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
@@ -430,7 +430,7 @@
         private System.Windows.Forms.Label NaamInputLbl;
         private System.Windows.Forms.Label leeftijdLbl;
         private System.Windows.Forms.Label naamLbl;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox PersoonLbx;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label fruitInfoLbl;
         private System.Windows.Forms.Label voedingswaardeInputLbl;
