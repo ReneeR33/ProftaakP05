@@ -24,11 +24,14 @@ namespace FruitMachineDing
                 conn.Open();
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    fruit.Add(reader.GetString(0));
+                    while (reader.Read())
+                    {
+                        fruit.Add(reader.GetString(0));
+                    }
                    
                 }
-
             }
+            return fruit;
         }
 
         public List<string> AddToList(string Fruit)

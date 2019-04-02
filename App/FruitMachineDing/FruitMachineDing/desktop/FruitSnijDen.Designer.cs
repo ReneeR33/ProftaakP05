@@ -104,12 +104,8 @@
             this.BevestigingPanel.Controls.Add(this.snijschijfInputLbl);
             this.BevestigingPanel.Controls.Add(this.snijschijfLbl);
             this.BevestigingPanel.Controls.Add(this.snijschijfBtn);
-<<<<<<< HEAD
             this.BevestigingPanel.Location = new System.Drawing.Point(11, 3);
-=======
-            this.BevestigingPanel.Location = new System.Drawing.Point(639, 13);
             this.BevestigingPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
->>>>>>> 8fc5a33126fea0825db49b44751a3d0fb7f5c20d
             this.BevestigingPanel.Name = "BevestigingPanel";
             this.BevestigingPanel.Size = new System.Drawing.Size(670, 356);
             this.BevestigingPanel.TabIndex = 1;
@@ -257,7 +253,6 @@
             this.tabPage2.Controls.Add(this.NaamInputLbl);
             this.tabPage2.Controls.Add(this.leeftijdLbl);
             this.tabPage2.Controls.Add(this.naamLbl);
-            this.tabPage2.Controls.Add(this.listBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Name = "tabPage2";
@@ -331,12 +326,12 @@
             // 
             // PersoonLbx
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 57);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(192, 290);
-            this.listBox1.TabIndex = 0;
+            //this.listBox1.FormattingEnabled = true;
+            //this.listBox1.Location = new System.Drawing.Point(6, 57);
+            //this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            //this.listBox1.Name = "listBox1";
+            //this.listBox1.Size = new System.Drawing.Size(192, 290);
+            //this.listBox1.TabIndex = 0;
             // 
             // tabPage3
             // 
