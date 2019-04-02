@@ -71,10 +71,10 @@
             this.FruitSelectTab.Controls.Add(this.tabPage2);
             this.FruitSelectTab.Controls.Add(this.tabPage3);
             this.FruitSelectTab.Location = new System.Drawing.Point(0, 0);
-            this.FruitSelectTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.FruitSelectTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FruitSelectTab.Name = "FruitSelectTab";
             this.FruitSelectTab.SelectedIndex = 0;
-            this.FruitSelectTab.Size = new System.Drawing.Size(901, 466);
+            this.FruitSelectTab.Size = new System.Drawing.Size(676, 379);
             this.FruitSelectTab.TabIndex = 0;
             // 
             // tabPage1
@@ -88,11 +88,11 @@
             this.tabPage1.Controls.Add(this.selectedFruitLbx);
             this.tabPage1.Controls.Add(this.FruitLbx);
             this.tabPage1.Controls.Add(this.persoonLbl);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(893, 437);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Size = new System.Drawing.Size(668, 353);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Porties";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -104,20 +104,24 @@
             this.BevestigingPanel.Controls.Add(this.snijschijfInputLbl);
             this.BevestigingPanel.Controls.Add(this.snijschijfLbl);
             this.BevestigingPanel.Controls.Add(this.snijschijfBtn);
-            this.BevestigingPanel.Location = new System.Drawing.Point(0, 0);
-            this.BevestigingPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+<<<<<<< HEAD
+            this.BevestigingPanel.Location = new System.Drawing.Point(11, 3);
+=======
+            this.BevestigingPanel.Location = new System.Drawing.Point(639, 13);
+            this.BevestigingPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> 8fc5a33126fea0825db49b44751a3d0fb7f5c20d
             this.BevestigingPanel.Name = "BevestigingPanel";
-            this.BevestigingPanel.Size = new System.Drawing.Size(893, 438);
+            this.BevestigingPanel.Size = new System.Drawing.Size(670, 356);
             this.BevestigingPanel.TabIndex = 1;
             this.BevestigingPanel.Visible = false;
             this.BevestigingPanel.VisibleChanged += new System.EventHandler(this.BevestigingPanel_VisibleChanged);
             // 
             // backBtn
             // 
-            this.backBtn.Location = new System.Drawing.Point(19, 106);
-            this.backBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.backBtn.Location = new System.Drawing.Point(14, 86);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(144, 30);
+            this.backBtn.Size = new System.Drawing.Size(108, 24);
             this.backBtn.TabIndex = 8;
             this.backBtn.Text = "ga terug";
             this.backBtn.UseVisualStyleBackColor = true;
@@ -125,10 +129,10 @@
             // 
             // persBtn
             // 
-            this.persBtn.Location = new System.Drawing.Point(19, 75);
-            this.persBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.persBtn.Location = new System.Drawing.Point(14, 61);
+            this.persBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.persBtn.Name = "persBtn";
-            this.persBtn.Size = new System.Drawing.Size(144, 25);
+            this.persBtn.Size = new System.Drawing.Size(108, 20);
             this.persBtn.TabIndex = 7;
             this.persBtn.Text = "pers";
             this.persBtn.UseVisualStyleBackColor = true;
@@ -136,27 +140,29 @@
             // snijschijfInputLbl
             // 
             this.snijschijfInputLbl.AutoSize = true;
-            this.snijschijfInputLbl.Location = new System.Drawing.Point(136, 25);
+            this.snijschijfInputLbl.Location = new System.Drawing.Point(102, 20);
+            this.snijschijfInputLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.snijschijfInputLbl.Name = "snijschijfInputLbl";
-            this.snijschijfInputLbl.Size = new System.Drawing.Size(111, 17);
+            this.snijschijfInputLbl.Size = new System.Drawing.Size(83, 13);
             this.snijschijfInputLbl.TabIndex = 6;
             this.snijschijfInputLbl.Text = "huidige snijschijf";
             // 
             // snijschijfLbl
             // 
             this.snijschijfLbl.AutoSize = true;
-            this.snijschijfLbl.Location = new System.Drawing.Point(15, 25);
+            this.snijschijfLbl.Location = new System.Drawing.Point(11, 20);
+            this.snijschijfLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.snijschijfLbl.Name = "snijschijfLbl";
-            this.snijschijfLbl.Size = new System.Drawing.Size(115, 17);
+            this.snijschijfLbl.Size = new System.Drawing.Size(86, 13);
             this.snijschijfLbl.TabIndex = 5;
             this.snijschijfLbl.Text = "huidige snijschijf:";
             // 
             // snijschijfBtn
             // 
-            this.snijschijfBtn.Location = new System.Drawing.Point(19, 44);
-            this.snijschijfBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.snijschijfBtn.Location = new System.Drawing.Point(14, 36);
+            this.snijschijfBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.snijschijfBtn.Name = "snijschijfBtn";
-            this.snijschijfBtn.Size = new System.Drawing.Size(144, 25);
+            this.snijschijfBtn.Size = new System.Drawing.Size(108, 20);
             this.snijschijfBtn.TabIndex = 4;
             this.snijschijfBtn.Text = "verander snijschijf";
             this.snijschijfBtn.UseVisualStyleBackColor = true;
@@ -165,36 +171,39 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(579, 41);
+            this.label3.Location = new System.Drawing.Point(434, 33);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 17);
+            this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 9;
             this.label3.Text = "Vitamines:";
             // 
             // selectedFruitLbl
             // 
             this.selectedFruitLbl.AutoSize = true;
-            this.selectedFruitLbl.Location = new System.Drawing.Point(292, 41);
+            this.selectedFruitLbl.Location = new System.Drawing.Point(219, 33);
+            this.selectedFruitLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.selectedFruitLbl.Name = "selectedFruitLbl";
-            this.selectedFruitLbl.Size = new System.Drawing.Size(125, 17);
+            this.selectedFruitLbl.Size = new System.Drawing.Size(93, 13);
             this.selectedFruitLbl.TabIndex = 8;
             this.selectedFruitLbl.Text = "Geselecteerd fruit:";
             // 
             // fruitLbl
             // 
             this.fruitLbl.AutoSize = true;
-            this.fruitLbl.Location = new System.Drawing.Point(5, 41);
+            this.fruitLbl.Location = new System.Drawing.Point(4, 33);
+            this.fruitLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.fruitLbl.Name = "fruitLbl";
-            this.fruitLbl.Size = new System.Drawing.Size(36, 17);
+            this.fruitLbl.Size = new System.Drawing.Size(27, 13);
             this.fruitLbl.TabIndex = 7;
             this.fruitLbl.Text = "fruit:";
             // 
             // BevestigKnop
             // 
-            this.BevestigKnop.Location = new System.Drawing.Point(701, 400);
-            this.BevestigKnop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BevestigKnop.Location = new System.Drawing.Point(526, 325);
+            this.BevestigKnop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BevestigKnop.Name = "BevestigKnop";
-            this.BevestigKnop.Size = new System.Drawing.Size(131, 26);
+            this.BevestigKnop.Size = new System.Drawing.Size(98, 21);
             this.BevestigKnop.TabIndex = 6;
             this.BevestigKnop.Text = "bevestig";
             this.BevestigKnop.UseVisualStyleBackColor = true;
@@ -203,21 +212,19 @@
             // vitamineLbx
             // 
             this.vitamineLbx.FormattingEnabled = true;
-            this.vitamineLbx.ItemHeight = 16;
-            this.vitamineLbx.Location = new System.Drawing.Point(581, 70);
-            this.vitamineLbx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.vitamineLbx.Location = new System.Drawing.Point(436, 57);
+            this.vitamineLbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.vitamineLbx.Name = "vitamineLbx";
-            this.vitamineLbx.Size = new System.Drawing.Size(249, 324);
+            this.vitamineLbx.Size = new System.Drawing.Size(188, 264);
             this.vitamineLbx.TabIndex = 3;
             // 
             // selectedFruitLbx
             // 
             this.selectedFruitLbx.FormattingEnabled = true;
-            this.selectedFruitLbx.ItemHeight = 16;
-            this.selectedFruitLbx.Location = new System.Drawing.Point(295, 70);
-            this.selectedFruitLbx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.selectedFruitLbx.Location = new System.Drawing.Point(221, 57);
+            this.selectedFruitLbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.selectedFruitLbx.Name = "selectedFruitLbx";
-            this.selectedFruitLbx.Size = new System.Drawing.Size(249, 356);
+            this.selectedFruitLbx.Size = new System.Drawing.Size(188, 290);
             this.selectedFruitLbx.TabIndex = 2;
             this.selectedFruitLbx.SelectedIndexChanged += new System.EventHandler(this.selectedFruitLbx_SelectedIndexChanged);
             this.selectedFruitLbx.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.selectedFruitLbx_MouseDoubleClick);
@@ -225,20 +232,20 @@
             // FruitLbx
             // 
             this.FruitLbx.FormattingEnabled = true;
-            this.FruitLbx.ItemHeight = 16;
-            this.FruitLbx.Location = new System.Drawing.Point(5, 70);
-            this.FruitLbx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.FruitLbx.Location = new System.Drawing.Point(4, 57);
+            this.FruitLbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FruitLbx.Name = "FruitLbx";
-            this.FruitLbx.Size = new System.Drawing.Size(249, 356);
+            this.FruitLbx.Size = new System.Drawing.Size(188, 290);
             this.FruitLbx.TabIndex = 1;
             this.FruitLbx.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.FruitLbx_MouseDoubleClick);
             // 
             // persoonLbl
             // 
             this.persoonLbl.AutoSize = true;
-            this.persoonLbl.Location = new System.Drawing.Point(8, 2);
+            this.persoonLbl.Location = new System.Drawing.Point(6, 2);
+            this.persoonLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.persoonLbl.Name = "persoonLbl";
-            this.persoonLbl.Size = new System.Drawing.Size(61, 17);
+            this.persoonLbl.Size = new System.Drawing.Size(46, 13);
             this.persoonLbl.TabIndex = 0;
             this.persoonLbl.Text = "Persoon";
             // 
@@ -251,11 +258,11 @@
             this.tabPage2.Controls.Add(this.leeftijdLbl);
             this.tabPage2.Controls.Add(this.naamLbl);
             this.tabPage2.Controls.Add(this.listBox1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(893, 437);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Size = new System.Drawing.Size(668, 353);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Personen";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -263,18 +270,19 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 50);
+            this.label4.Location = new System.Drawing.Point(6, 41);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 17);
+            this.label4.Size = new System.Drawing.Size(54, 13);
             this.label4.TabIndex = 12;
             this.label4.Text = "Personen:";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(300, 394);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(225, 320);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 32);
+            this.button1.Size = new System.Drawing.Size(76, 26);
             this.button1.TabIndex = 11;
             this.button1.Text = "log in";
             this.button1.UseVisualStyleBackColor = true;
@@ -283,9 +291,10 @@
             // 
             this.leeftijdInputLbl.AccessibleRole = System.Windows.Forms.AccessibleRole.IpAddress;
             this.leeftijdInputLbl.AutoSize = true;
-            this.leeftijdInputLbl.Location = new System.Drawing.Point(392, 97);
+            this.leeftijdInputLbl.Location = new System.Drawing.Point(294, 79);
+            this.leeftijdInputLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.leeftijdInputLbl.Name = "leeftijdInputLbl";
-            this.leeftijdInputLbl.Size = new System.Drawing.Size(31, 17);
+            this.leeftijdInputLbl.Size = new System.Drawing.Size(24, 13);
             this.leeftijdInputLbl.TabIndex = 8;
             this.leeftijdInputLbl.Text = "test";
             // 
@@ -293,38 +302,40 @@
             // 
             this.NaamInputLbl.AccessibleRole = System.Windows.Forms.AccessibleRole.IpAddress;
             this.NaamInputLbl.AutoSize = true;
-            this.NaamInputLbl.Location = new System.Drawing.Point(392, 70);
+            this.NaamInputLbl.Location = new System.Drawing.Point(294, 57);
+            this.NaamInputLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NaamInputLbl.Name = "NaamInputLbl";
-            this.NaamInputLbl.Size = new System.Drawing.Size(31, 17);
+            this.NaamInputLbl.Size = new System.Drawing.Size(24, 13);
             this.NaamInputLbl.TabIndex = 6;
             this.NaamInputLbl.Text = "test";
             // 
             // leeftijdLbl
             // 
             this.leeftijdLbl.AutoSize = true;
-            this.leeftijdLbl.Location = new System.Drawing.Point(297, 97);
+            this.leeftijdLbl.Location = new System.Drawing.Point(223, 79);
+            this.leeftijdLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.leeftijdLbl.Name = "leeftijdLbl";
-            this.leeftijdLbl.Size = new System.Drawing.Size(58, 17);
+            this.leeftijdLbl.Size = new System.Drawing.Size(44, 13);
             this.leeftijdLbl.TabIndex = 3;
             this.leeftijdLbl.Text = "Leeftijd:";
             // 
             // naamLbl
             // 
             this.naamLbl.AutoSize = true;
-            this.naamLbl.Location = new System.Drawing.Point(297, 70);
+            this.naamLbl.Location = new System.Drawing.Point(223, 57);
+            this.naamLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.naamLbl.Name = "naamLbl";
-            this.naamLbl.Size = new System.Drawing.Size(49, 17);
+            this.naamLbl.Size = new System.Drawing.Size(38, 13);
             this.naamLbl.TabIndex = 1;
             this.naamLbl.Text = "Naam:";
             // 
             // PersoonLbx
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(8, 70);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listBox1.Location = new System.Drawing.Point(6, 57);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(255, 356);
+            this.listBox1.Size = new System.Drawing.Size(192, 290);
             this.listBox1.TabIndex = 0;
             // 
             // tabPage3
@@ -334,11 +345,11 @@
             this.tabPage3.Controls.Add(this.voedingswaardeLbl);
             this.tabPage3.Controls.Add(this.listBox2);
             this.tabPage3.Controls.Add(this.fruitInfoLbx);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage3.Size = new System.Drawing.Size(893, 437);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Size = new System.Drawing.Size(668, 353);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Fruit info";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -346,59 +357,60 @@
             // fruitInfoLbl
             // 
             this.fruitInfoLbl.AutoSize = true;
-            this.fruitInfoLbl.Location = new System.Drawing.Point(555, 70);
+            this.fruitInfoLbl.Location = new System.Drawing.Point(416, 57);
+            this.fruitInfoLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.fruitInfoLbl.Name = "fruitInfoLbl";
-            this.fruitInfoLbl.Size = new System.Drawing.Size(31, 17);
+            this.fruitInfoLbl.Size = new System.Drawing.Size(24, 13);
             this.fruitInfoLbl.TabIndex = 6;
             this.fruitInfoLbl.Text = "test";
             // 
             // voedingswaardeInputLbl
             // 
             this.voedingswaardeInputLbl.AutoSize = true;
-            this.voedingswaardeInputLbl.Location = new System.Drawing.Point(675, 38);
+            this.voedingswaardeInputLbl.Location = new System.Drawing.Point(506, 31);
+            this.voedingswaardeInputLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.voedingswaardeInputLbl.Name = "voedingswaardeInputLbl";
-            this.voedingswaardeInputLbl.Size = new System.Drawing.Size(31, 17);
+            this.voedingswaardeInputLbl.Size = new System.Drawing.Size(24, 13);
             this.voedingswaardeInputLbl.TabIndex = 5;
             this.voedingswaardeInputLbl.Text = "test";
             // 
             // voedingswaardeLbl
             // 
             this.voedingswaardeLbl.AutoSize = true;
-            this.voedingswaardeLbl.Location = new System.Drawing.Point(551, 38);
+            this.voedingswaardeLbl.Location = new System.Drawing.Point(413, 31);
+            this.voedingswaardeLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.voedingswaardeLbl.Name = "voedingswaardeLbl";
-            this.voedingswaardeLbl.Size = new System.Drawing.Size(117, 17);
+            this.voedingswaardeLbl.Size = new System.Drawing.Size(89, 13);
             this.voedingswaardeLbl.TabIndex = 4;
             this.voedingswaardeLbl.Text = "Voedingswaarde:";
             // 
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 16;
-            this.listBox2.Location = new System.Drawing.Point(264, 38);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listBox2.Location = new System.Drawing.Point(198, 31);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(249, 388);
+            this.listBox2.Size = new System.Drawing.Size(188, 316);
             this.listBox2.TabIndex = 3;
             // 
             // fruitInfoLbx
             // 
             this.fruitInfoLbx.FormattingEnabled = true;
-            this.fruitInfoLbx.ItemHeight = 16;
-            this.fruitInfoLbx.Location = new System.Drawing.Point(8, 38);
-            this.fruitInfoLbx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.fruitInfoLbx.Location = new System.Drawing.Point(6, 31);
+            this.fruitInfoLbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.fruitInfoLbx.Name = "fruitInfoLbx";
-            this.fruitInfoLbx.Size = new System.Drawing.Size(249, 388);
+            this.fruitInfoLbx.Size = new System.Drawing.Size(188, 316);
             this.fruitInfoLbx.TabIndex = 2;
             // 
             // FruitSnijden
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 462);
+            this.ClientSize = new System.Drawing.Size(677, 383);
             this.Controls.Add(this.FruitSelectTab);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximumSize = new System.Drawing.Size(918, 509);
-            this.MinimumSize = new System.Drawing.Size(918, 509);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(693, 422);
+            this.MinimumSize = new System.Drawing.Size(693, 422);
             this.Name = "FruitSnijden";
             this.Text = "Fruit snijden";
             this.Load += new System.EventHandler(this.FruitSnijden_Load);

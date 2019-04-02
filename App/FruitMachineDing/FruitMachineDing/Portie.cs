@@ -25,6 +25,7 @@ namespace FruitMachineDing
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     fruit.Add(reader.GetString(0));
+                   
                 }
 
             }
