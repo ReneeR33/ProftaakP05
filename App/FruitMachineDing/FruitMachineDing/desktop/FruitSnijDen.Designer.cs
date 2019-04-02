@@ -324,15 +324,6 @@
             this.naamLbl.TabIndex = 1;
             this.naamLbl.Text = "Naam:";
             // 
-            // PersoonLbx
-            // 
-            //this.listBox1.FormattingEnabled = true;
-            //this.listBox1.Location = new System.Drawing.Point(6, 57);
-            //this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            //this.listBox1.Name = "listBox1";
-            //this.listBox1.Size = new System.Drawing.Size(192, 290);
-            //this.listBox1.TabIndex = 0;
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.fruitInfoLbl);
