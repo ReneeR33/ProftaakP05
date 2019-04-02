@@ -33,6 +33,7 @@ namespace FruitMachineDing
         //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
         //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
         //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //Renee, word volwassen.        
 
         public FruitSnijden()
         {
