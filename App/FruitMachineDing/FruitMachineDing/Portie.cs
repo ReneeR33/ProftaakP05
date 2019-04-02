@@ -25,7 +25,6 @@ namespace FruitMachineDing
                 while (reader.Read())
                 {
                     fruit.Add(reader.GetString(0));
-                   
                 }
                 conn.Close();
                 return fruit;
