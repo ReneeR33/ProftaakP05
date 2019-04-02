@@ -12,7 +12,8 @@ namespace FruitMachineDing
 
         List<string> portie = new List<string>();
         List<string> fruit = new List<string>();
-        
+        List<string> vitamins = new List<string>();
+
 
         public List<string> GiveFruit(string connectionString)
         {
@@ -32,6 +33,25 @@ namespace FruitMachineDing
                 }
             }
             return fruit;
+        }
+        public List<string> GiveVitamins(string connectionString, string fruit)
+        {
+            string query = "SELECT vitamine FROM Vitamines WHERE Id = (SELECT VitaminesId FROM FruitVitamines WHERE FruitId =(SELECT Id FROM Fruit WHERE Name LIKE '"+ fruit + "'))";
+
+            using (SqlConnection conn = new SqlConnection(Convert.ToString(connectionString)))
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                conn.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        vitamins.Add(reader.GetString(0));
+                    }
+
+                }
+            }
+            return vitamins;
         }
 
         public List<string> AddToList(string Fruit)

@@ -13,7 +13,9 @@ namespace FruitMachineDing
         Fruitmachine fruitmachine = new Fruitmachine();
         Portie portie1 = new Portie();
         List<string> portie = new List<string>();
-        List<string> fruit = new List<string>();      
+        List<string> fruit = new List<string>();
+        List<string> vitamines = new List<string>();
+
 
         public FruitSnijden()
         {
@@ -62,7 +64,21 @@ namespace FruitMachineDing
 
         private void FruitSnijden_Load(object sender, EventArgs e)
         {
-            portie1.GiveFruit(connectionString);
+            portie = portie1.GiveFruit(connectionString);
+            FruitLbx.Items.AddRange(portie.ToArray());
+            fruitInfoLbx.Items.Add("appel");
+        }
+
+        private void fruitInfoLbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SelectedFruitLbx2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            vitamines = portie1.GiveVitamins(connectionString, fruitInfoLbx.GetItemText(fruitInfoLbx.SelectedItem));
+            SelectedFruitLbx2.Items.AddRange(vitamines.ToArray());
+
         }
     }
 }
