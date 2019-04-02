@@ -24,14 +24,8 @@ namespace FruitMachineDing
                 conn.Open();
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    fruit.Clear();
-                    while (reader.Read())
-                    {
-                        fruit.Add(reader.GetString(0));
-
-                    }
-                    conn.Close();
-                    return fruit;
+                    fruit.Add(reader.GetString(0));
+                   
                 }
 
             }

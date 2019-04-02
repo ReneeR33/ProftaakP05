@@ -71,7 +71,7 @@
             this.FruitSelectTab.Controls.Add(this.tabPage2);
             this.FruitSelectTab.Controls.Add(this.tabPage3);
             this.FruitSelectTab.Location = new System.Drawing.Point(0, 0);
-            this.FruitSelectTab.Margin = new System.Windows.Forms.Padding(2);
+            this.FruitSelectTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FruitSelectTab.Name = "FruitSelectTab";
             this.FruitSelectTab.SelectedIndex = 0;
             this.FruitSelectTab.Size = new System.Drawing.Size(676, 379);
@@ -89,9 +89,9 @@
             this.tabPage1.Controls.Add(this.FruitLbx);
             this.tabPage1.Controls.Add(this.persoonLbl);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Size = new System.Drawing.Size(668, 353);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Porties";
@@ -104,15 +104,12 @@
             this.BevestigingPanel.Controls.Add(this.snijschijfInputLbl);
             this.BevestigingPanel.Controls.Add(this.snijschijfLbl);
             this.BevestigingPanel.Controls.Add(this.snijschijfBtn);
-            
+<<<<<<< HEAD
             this.BevestigingPanel.Location = new System.Drawing.Point(11, 3);
-            
+=======
             this.BevestigingPanel.Location = new System.Drawing.Point(639, 13);
-            
-            this.BevestigingPanel.Margin = new System.Windows.Forms.Padding(2);
-            
             this.BevestigingPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            
+>>>>>>> 8fc5a33126fea0825db49b44751a3d0fb7f5c20d
             this.BevestigingPanel.Name = "BevestigingPanel";
             this.BevestigingPanel.Size = new System.Drawing.Size(670, 356);
             this.BevestigingPanel.TabIndex = 1;
@@ -122,7 +119,7 @@
             // backBtn
             // 
             this.backBtn.Location = new System.Drawing.Point(14, 86);
-            this.backBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(108, 24);
             this.backBtn.TabIndex = 8;
@@ -133,7 +130,7 @@
             // persBtn
             // 
             this.persBtn.Location = new System.Drawing.Point(14, 61);
-            this.persBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.persBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.persBtn.Name = "persBtn";
             this.persBtn.Size = new System.Drawing.Size(108, 20);
             this.persBtn.TabIndex = 7;
@@ -163,7 +160,7 @@
             // snijschijfBtn
             // 
             this.snijschijfBtn.Location = new System.Drawing.Point(14, 36);
-            this.snijschijfBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.snijschijfBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.snijschijfBtn.Name = "snijschijfBtn";
             this.snijschijfBtn.Size = new System.Drawing.Size(108, 20);
             this.snijschijfBtn.TabIndex = 4;
@@ -204,7 +201,7 @@
             // BevestigKnop
             // 
             this.BevestigKnop.Location = new System.Drawing.Point(526, 325);
-            this.BevestigKnop.Margin = new System.Windows.Forms.Padding(2);
+            this.BevestigKnop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BevestigKnop.Name = "BevestigKnop";
             this.BevestigKnop.Size = new System.Drawing.Size(98, 21);
             this.BevestigKnop.TabIndex = 6;
@@ -216,7 +213,7 @@
             // 
             this.vitamineLbx.FormattingEnabled = true;
             this.vitamineLbx.Location = new System.Drawing.Point(436, 57);
-            this.vitamineLbx.Margin = new System.Windows.Forms.Padding(2);
+            this.vitamineLbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.vitamineLbx.Name = "vitamineLbx";
             this.vitamineLbx.Size = new System.Drawing.Size(188, 264);
             this.vitamineLbx.TabIndex = 3;
@@ -225,7 +222,7 @@
             // 
             this.selectedFruitLbx.FormattingEnabled = true;
             this.selectedFruitLbx.Location = new System.Drawing.Point(221, 57);
-            this.selectedFruitLbx.Margin = new System.Windows.Forms.Padding(2);
+            this.selectedFruitLbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.selectedFruitLbx.Name = "selectedFruitLbx";
             this.selectedFruitLbx.Size = new System.Drawing.Size(188, 290);
             this.selectedFruitLbx.TabIndex = 2;
@@ -236,7 +233,7 @@
             // 
             this.FruitLbx.FormattingEnabled = true;
             this.FruitLbx.Location = new System.Drawing.Point(4, 57);
-            this.FruitLbx.Margin = new System.Windows.Forms.Padding(2);
+            this.FruitLbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FruitLbx.Name = "FruitLbx";
             this.FruitLbx.Size = new System.Drawing.Size(188, 290);
             this.FruitLbx.TabIndex = 1;
@@ -260,11 +257,11 @@
             this.tabPage2.Controls.Add(this.NaamInputLbl);
             this.tabPage2.Controls.Add(this.leeftijdLbl);
             this.tabPage2.Controls.Add(this.naamLbl);
-            this.tabPage2.Controls.Add(this.PersoonLbx);
+            this.tabPage2.Controls.Add(this.listBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Size = new System.Drawing.Size(668, 353);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Personen";
@@ -273,17 +270,17 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 42);
+            this.label4.Location = new System.Drawing.Point(6, 41);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.Size = new System.Drawing.Size(54, 13);
             this.label4.TabIndex = 12;
             this.label4.Text = "Personen:";
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(225, 320);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(76, 26);
             this.button1.TabIndex = 11;
@@ -334,12 +331,12 @@
             // 
             // PersoonLbx
             // 
-            this.PersoonLbx.FormattingEnabled = true;
-            this.PersoonLbx.Location = new System.Drawing.Point(6, 57);
-            this.PersoonLbx.Margin = new System.Windows.Forms.Padding(2);
-            this.PersoonLbx.Name = "PersoonLbx";
-            this.PersoonLbx.Size = new System.Drawing.Size(192, 290);
-            this.PersoonLbx.TabIndex = 0;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(6, 57);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(192, 290);
+            this.listBox1.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -349,9 +346,9 @@
             this.tabPage3.Controls.Add(this.listBox2);
             this.tabPage3.Controls.Add(this.fruitInfoLbx);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage3.Size = new System.Drawing.Size(668, 353);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Fruit info";
@@ -391,7 +388,7 @@
             // 
             this.listBox2.FormattingEnabled = true;
             this.listBox2.Location = new System.Drawing.Point(198, 31);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(188, 316);
             this.listBox2.TabIndex = 3;
@@ -400,7 +397,7 @@
             // 
             this.fruitInfoLbx.FormattingEnabled = true;
             this.fruitInfoLbx.Location = new System.Drawing.Point(6, 31);
-            this.fruitInfoLbx.Margin = new System.Windows.Forms.Padding(2);
+            this.fruitInfoLbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.fruitInfoLbx.Name = "fruitInfoLbx";
             this.fruitInfoLbx.Size = new System.Drawing.Size(188, 316);
             this.fruitInfoLbx.TabIndex = 2;
@@ -411,7 +408,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(677, 383);
             this.Controls.Add(this.FruitSelectTab);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximumSize = new System.Drawing.Size(693, 422);
             this.MinimumSize = new System.Drawing.Size(693, 422);
             this.Name = "FruitSnijden";
