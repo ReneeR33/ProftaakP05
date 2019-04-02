@@ -8,18 +8,36 @@ namespace FruitMachineDing
 {
     public partial class FruitSnijden : Form
     {
-        public string connectionString { get; private set; }
+        public SqlConnection connectionString { get; private set; }
 
         Fruitmachine fruitmachine = new Fruitmachine();
-        Persoon persoon = new Persoon();
         Portie portie1 = new Portie();
         List<string> portie = new List<string>();
         List<string> fruit = new List<string>();
 
+        //Waar is de persoon klasse?
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+        //NICK EN MAJKOL GA AAN HET WERK!!!!!!!!!!!!!!
+
         public FruitSnijden()
         {
             InitializeComponent();
-            connectionString = ConfigurationManager.ConnectionStrings["FruitMachineDing.Properties.Settings.FruitDBConnectionString"].ConnectionString;
+            //connectionString = ConfigurationManager.ConnectionStrings["FruitMachineDing.Properties.Settings.FruitDBConnectionString"].ConnectionString;
         }
 
         private void BevestigKnop_Click(object sender, EventArgs e)
@@ -47,16 +65,6 @@ namespace FruitMachineDing
 
         }
 
-        private void FruitLbx_VisibleChanged(object sender, EventArgs e)
-        {
-            //persoon.currentPortie.AddToList(FruitLbx.GetItemText(FruitLbx.SelectedIndex));
-        }
-
-        private void FruitLbx_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //persoon.currentPortie.AddToList(FruitLbx.GetItemText(FruitLbx.SelectedIndex));
-        }
-
         private void selectedFruitLbx_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             portie = portie1.RemoveFromList(Convert.ToString(selectedFruitLbx.GetItemText(selectedFruitLbx.SelectedItem)));
@@ -73,7 +81,7 @@ namespace FruitMachineDing
 
         private void FruitSnijden_Load(object sender, EventArgs e)
         {
-
+            portie1.GiveFruit(connectionString);
         }
     }
 }

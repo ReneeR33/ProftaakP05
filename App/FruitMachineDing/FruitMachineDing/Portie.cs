@@ -14,26 +14,23 @@ namespace FruitMachineDing
         List<string> fruit = new List<string>();
         
 
-      /*  public List<string> GiveFruit(SqlConnection connectionString)
+        public List<string> GiveFruit(SqlConnection connectionString)
         {
-            SqlCommand cmd = new SqlCommand("SELECT ", connectionString);
-            SqlConnection conn = new SqlConnection(connectionString);
+            SqlCommand cmd = new SqlCommand("SELECT Name FROM Fruit;", connectionString);
+            SqlConnection conn = new SqlConnection(Convert.ToString(connectionString));
             using (SqlDataReader reader = cmd.ExecuteReader())
-            {
-
-                
-
+            { 
                 fruit.Clear();
                 conn.Open();
                 while (reader.Read())
                 {
-                     = reader.GetString(0);
-                    conn.Close();
-                    return ;
+                    fruit.Add(reader.GetString(0));
+                   
                 }
-                conn.Open();
+                conn.Close();
+                return fruit;
             }
-        }*/
+        }
         public List<string> AddToList(string Fruit)
         {
             portie.Add(Fruit);

@@ -104,8 +104,15 @@
             this.BevestigingPanel.Controls.Add(this.snijschijfInputLbl);
             this.BevestigingPanel.Controls.Add(this.snijschijfLbl);
             this.BevestigingPanel.Controls.Add(this.snijschijfBtn);
+            
+            this.BevestigingPanel.Location = new System.Drawing.Point(11, 3);
+            
             this.BevestigingPanel.Location = new System.Drawing.Point(639, 13);
+            
             this.BevestigingPanel.Margin = new System.Windows.Forms.Padding(2);
+            
+            this.BevestigingPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            
             this.BevestigingPanel.Name = "BevestigingPanel";
             this.BevestigingPanel.Size = new System.Drawing.Size(670, 356);
             this.BevestigingPanel.TabIndex = 1;
@@ -233,8 +240,6 @@
             this.FruitLbx.Name = "FruitLbx";
             this.FruitLbx.Size = new System.Drawing.Size(188, 290);
             this.FruitLbx.TabIndex = 1;
-            this.FruitLbx.SelectedIndexChanged += new System.EventHandler(this.FruitLbx_SelectedIndexChanged);
-            this.FruitLbx.VisibleChanged += new System.EventHandler(this.FruitLbx_VisibleChanged);
             this.FruitLbx.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.FruitLbx_MouseDoubleClick);
             // 
             // persoonLbl
