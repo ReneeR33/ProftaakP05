@@ -30,6 +30,7 @@ namespace FruitMachineDing
                 conn.Close();
                 return fruit;
             }
+            return fruit;
         }
         public List<string> AddToList(string Fruit)
         {
