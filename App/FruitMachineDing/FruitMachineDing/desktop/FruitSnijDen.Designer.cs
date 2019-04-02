@@ -58,6 +58,7 @@
             this.f_SelectedFruitLbx = new System.Windows.Forms.ListBox();
             this.f_fruitInfoLbx = new System.Windows.Forms.ListBox();
             this.PersoonLbx = new System.Windows.Forms.ListBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.FruitSelectTab.SuspendLayout();
             this.tab_porties.SuspendLayout();
             this.BevestigingPanel.SuspendLayout();
@@ -67,6 +68,9 @@
             // 
             // FruitSelectTab
             // 
+            this.FruitSelectTab.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.FruitSelectTab.Controls.Add(this.tab_porties);
             this.FruitSelectTab.Controls.Add(this.tab_personen);
             this.FruitSelectTab.Controls.Add(this.tab_fruitInfo);
@@ -208,7 +212,7 @@
             // po_vitamineLbx
             // 
             this.po_vitamineLbx.FormattingEnabled = true;
-            this.po_vitamineLbx.Location = new System.Drawing.Point(436, 57);
+            this.po_vitamineLbx.Location = new System.Drawing.Point(436, 48);
             this.po_vitamineLbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.po_vitamineLbx.Name = "po_vitamineLbx";
             this.po_vitamineLbx.Size = new System.Drawing.Size(188, 264);
@@ -217,7 +221,7 @@
             // po_selectedFruitLbx
             // 
             this.po_selectedFruitLbx.FormattingEnabled = true;
-            this.po_selectedFruitLbx.Location = new System.Drawing.Point(221, 57);
+            this.po_selectedFruitLbx.Location = new System.Drawing.Point(222, 48);
             this.po_selectedFruitLbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.po_selectedFruitLbx.Name = "po_selectedFruitLbx";
             this.po_selectedFruitLbx.Size = new System.Drawing.Size(188, 290);
@@ -228,7 +232,7 @@
             // po_fruitLbx
             // 
             this.po_fruitLbx.FormattingEnabled = true;
-            this.po_fruitLbx.Location = new System.Drawing.Point(4, 57);
+            this.po_fruitLbx.Location = new System.Drawing.Point(7, 48);
             this.po_fruitLbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.po_fruitLbx.Name = "po_fruitLbx";
             this.po_fruitLbx.Size = new System.Drawing.Size(188, 290);
@@ -247,6 +251,7 @@
             // 
             // tab_personen
             // 
+            this.tab_personen.Controls.Add(this.listBox1);
             this.tab_personen.Controls.Add(this.label4);
             this.tab_personen.Controls.Add(this.pe_button);
             this.tab_personen.Controls.Add(this.pe_leeftijdInputLbl);
@@ -265,7 +270,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 41);
+            this.label4.Location = new System.Drawing.Point(4, 33);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
@@ -274,7 +279,7 @@
             // 
             // pe_button
             // 
-            this.pe_button.Location = new System.Drawing.Point(225, 320);
+            this.pe_button.Location = new System.Drawing.Point(226, 312);
             this.pe_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pe_button.Name = "pe_button";
             this.pe_button.Size = new System.Drawing.Size(76, 26);
@@ -397,6 +402,15 @@
             this.PersoonLbx.Size = new System.Drawing.Size(120, 96);
             this.PersoonLbx.TabIndex = 0;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(7, 48);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(188, 290);
+            this.listBox1.TabIndex = 13;
+            // 
             // FruitSnijden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -454,6 +468,7 @@
         private System.Windows.Forms.Label snijschijfInputLbl;
         private System.Windows.Forms.Label snijschijfLbl;
         private System.Windows.Forms.Button snijschijfBtn;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
