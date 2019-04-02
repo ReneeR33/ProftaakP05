@@ -50,23 +50,23 @@ namespace FruitMachineDing
 
         private void selectedFruitLbx_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            portie = portie1.RemoveFromList(Convert.ToString(selectedFruitLbx.GetItemText(selectedFruitLbx.SelectedItem)));
-            selectedFruitLbx.Items.Clear();
-            selectedFruitLbx.Items.AddRange(portie.ToArray());
+            portie = portie1.RemoveFromList(Convert.ToString(po_selectedFruitLbx.GetItemText(po_selectedFruitLbx.SelectedItem)));
+            po_selectedFruitLbx.Items.Clear();
+            po_selectedFruitLbx.Items.AddRange(portie.ToArray());
         }
 
         private void FruitLbx_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            portie = portie1.AddToList(FruitLbx.GetItemText(FruitLbx.SelectedItem));
-            selectedFruitLbx.Items.Clear();
-            selectedFruitLbx.Items.AddRange(portie.ToArray());
+            portie = portie1.AddToList(po_fruitLbx.GetItemText(po_fruitLbx.SelectedItem));
+            po_selectedFruitLbx.Items.Clear();
+            po_selectedFruitLbx.Items.AddRange(portie.ToArray());
         }
 
         private void FruitSnijden_Load(object sender, EventArgs e)
         {
             portie = portie1.GiveFruit(connectionString);
-            FruitLbx.Items.AddRange(portie.ToArray());
-            fruitInfoLbx.Items.Add("appel");
+            po_fruitLbx.Items.AddRange(portie.ToArray());
+            f_fruitInfoLbx.Items.Add("appel");
         }
 
         private void fruitInfoLbx_SelectedIndexChanged(object sender, EventArgs e)
@@ -76,8 +76,8 @@ namespace FruitMachineDing
 
         private void SelectedFruitLbx2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            vitamines = portie1.GiveVitamins(connectionString, fruitInfoLbx.GetItemText(fruitInfoLbx.SelectedItem));
-            SelectedFruitLbx2.Items.AddRange(vitamines.ToArray());
+            vitamines = portie1.GiveVitamins(connectionString, f_fruitInfoLbx.GetItemText(f_fruitInfoLbx.SelectedItem));
+            f_SelectedFruitLbx.Items.AddRange(vitamines.ToArray());
 
         }
     }
