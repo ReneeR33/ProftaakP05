@@ -66,7 +66,6 @@ namespace FruitMachineDing
         {
             portie = portie1.GiveFruit(connectionString);
             po_fruitLbx.Items.AddRange(portie.ToArray());
-            f_fruitInfoLbx.Items.Add("appel");
         }
 
         private void fruitInfoLbx_SelectedIndexChanged(object sender, EventArgs e)
