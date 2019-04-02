@@ -1,5 +1,6 @@
 String Message = "ADD_FINGERPRINT";
 uint8_t ID = 2;
+int disk = 1;
 void setup() {
   Serial.begin(9600);
   StartFingerprintscanner();
@@ -16,7 +17,10 @@ void loop() {
     AddFingerprint(ID);
     Message = "";
   }
-
-  delay(50);
+  else if (Message.startsWith("SWITCH_DISK:")){
+    SwitchDisk(disk);
+  }
+ 
+ delay(50);
 
 }

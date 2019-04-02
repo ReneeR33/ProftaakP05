@@ -4,9 +4,9 @@
 EVShield          evshield(0x34, 0x36);
 int currentDisk = 1;
 
-void RunMotor1(int Degrees, int MotorSpeed, int Direction){
+void RunMotor1(int Degrees, int MotorSpeed){
    evshield.bank_b.motorRunDegrees(SH_Motor_1,
-                                    Direction,
+                                    SH_Direction_Forward,
                                     MotorSpeed,
                                     Degrees,
                                     SH_Completion_Wait_For,
@@ -22,11 +22,11 @@ void RunMotor2(int Rotations, int MotorSpeed){
                                     SH_Next_Action_BrakeHold);
 }
 
-void SwitchToDisk(int disk){
+void SwitchDisk(int disk){
   if((disk = currentDisk + 1 && disk != 3) || (disk == 1 && currentDisk == 3)){
-    RunMotor1(120, 8, SH_Direction_Forward);
+    RunMotor1(120, 8);
   }
   else{
-    RunMotor1(120, 8, SH_Direction_Reverse);
+    RunMotor1(240, 8);
   }
 }
