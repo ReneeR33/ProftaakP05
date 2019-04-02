@@ -45,7 +45,8 @@ namespace FruitMachineDing
 
         private void selectedFruitLbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            vitamines = portie1.GiveVitamins(connectionString, f_fruitInfoLbx.GetItemText(f_fruitInfoLbx.SelectedItem));
+            f_SelectedFruitLbx.Items.AddRange(vitamines.ToArray());
         }
 
         private void selectedFruitLbx_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -66,6 +67,7 @@ namespace FruitMachineDing
         {
             portie = portie1.GiveFruit(connectionString);
             po_fruitLbx.Items.AddRange(portie.ToArray());
+            f_fruitInfoLbx.Items.AddRange(portie.ToArray());
         }
 
         private void fruitInfoLbx_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,8 +77,7 @@ namespace FruitMachineDing
 
         private void SelectedFruitLbx2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            vitamines = portie1.GiveVitamins(connectionString, f_fruitInfoLbx.GetItemText(f_fruitInfoLbx.SelectedItem));
-            f_SelectedFruitLbx.Items.AddRange(vitamines.ToArray());
+            
 
         }
     }
