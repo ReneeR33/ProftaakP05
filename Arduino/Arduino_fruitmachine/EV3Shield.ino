@@ -1,6 +1,12 @@
 #include <Wire.h>
 #include <EVShield.h>
 
+unsigned long endTimeMotor1;
+unsigned long endTimeMotor2;
+
+bool startMotor = false;
+bool isDown = false;
+
 EVShield          evshield(0x34, 0x36);
 int currentDisk = 1;
 
@@ -29,4 +35,12 @@ void SwitchDisk(int disk){
   else{
     RunMotor1(240, 8);
   }
+}
+
+void StartCutting(){
+  if(startMotor == false){
+    endTimeMotor1 == millis() + 20000;
+    startMotor = true;
+   }
+   if(millis() > endTimeMotor1 && )
 }
