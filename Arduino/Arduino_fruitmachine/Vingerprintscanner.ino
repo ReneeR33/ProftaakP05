@@ -26,7 +26,7 @@ int ReadFingerprint() {
     // found a match!
     Serial.print("|Fingerprint_Detected:");
     Serial.print(finger.fingerID);
-    Serial.println("%");
+    Serial.print("%");
     return finger.fingerID;
   
 }
