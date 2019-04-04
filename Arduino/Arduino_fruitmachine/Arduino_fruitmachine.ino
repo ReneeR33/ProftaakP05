@@ -13,6 +13,5 @@ void setup() {
 
 void loop() {
   UseMessage(CheckMessage());
-  delay(50);
-
+  
 }

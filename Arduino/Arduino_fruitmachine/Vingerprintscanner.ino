@@ -15,20 +15,24 @@ void StartFingerprintscanner() {
 }
 
 int ReadFingerprint() {
-  uint8_t p = finger.getImage();
-  if (p != FINGERPRINT_OK)  return -1;
+  if (millis() > endTimeFingerprint) {
+    uint8_t p = finger.getImage();
+    if (p != FINGERPRINT_OK)  return -1;
 
-  p = finger.image2Tz();
-  if (p != FINGERPRINT_OK)  return -1;
+    p = finger.image2Tz();
+    if (p != FINGERPRINT_OK)  return -1;
 
-  p = finger.fingerFastSearch();
-  if (p != FINGERPRINT_OK)  return -1;
+    p = finger.fingerFastSearch();
+    if (p != FINGERPRINT_OK)  return -1;
 
-  // found a match!
-  Serial.print("|Fingerprint_Detected:");
-  Serial.print(finger.fingerID);
-  Serial.println("%");
-  return finger.fingerID;
+    // found a match!
+    Serial.print("|Fingerprint_Detected:");
+    Serial.print(finger.fingerID);
+    Serial.println("%");
+    endTimeFingerprint = 50 + millis();
+    return finger.fingerID;
+  }
+  return -1;
 }
 
 uint8_t AddFingerprint(uint8_t id) {
