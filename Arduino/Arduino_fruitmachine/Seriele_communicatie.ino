@@ -41,10 +41,10 @@ void UseMessage(String messageDone) {
     SwitchDisk(disk);
   }
   else if (Message == "CUT_START") {
-    //motorStart = true;
+    weigthMotorOn = true;
   }
   else if (Message == "CUT_STOP") {
-    //StopMotor = true;
+    weigthDirection = false;
   }
 
 }
