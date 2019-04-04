@@ -37,10 +37,10 @@ void UseMessage(String messageDone) {
   else if (messageDone.startsWith("SWITCH_DISK:")) {
     SwitchDisk(disk);
   }
-  else if (Message == "CUT_START") {
+  else if (messageDone == "CUT_START") {
     weigthMotorOn = true;
   }
-  else if (Message == "CUT_STOP") {
+  else if (messageDone == "CUT_STOP") {
     weigthDirection = false;
   }
 
