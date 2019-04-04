@@ -6,9 +6,8 @@ unsigned long endTimeMotor2;
 
 bool weigthMotorOn = false; //true = motor voor gewicht aan, false = uit
 bool weigthDirection = true; //true = naar beneden, false = naar boven
-int weigthElevation = 30; //30 = boven, 0 = beneden
+int weigthElevation = 15; //30 = boven, 0 = beneden
 
-EVShield          evshield(0x34, 0x36);
 int currentDisk = 1;
 
 void RunMotor1Left()
@@ -34,7 +33,7 @@ void RunMotor1Right()
 void RunMotor2Down()
 {
   evshield.bank_b.motorRunRotations(SH_Motor_2,
-                                    SH_Direction_Forward,
+                                    SH_Direction_Reverse,
                                     100,
                                     1,
                                     SH_Completion_Wait_For,
@@ -49,13 +48,14 @@ void RunMotor2Down()
 void RunMotor2Up()
 {
   evshield.bank_b.motorRunRotations(SH_Motor_2,
-                                    SH_Direction_Reverse,
+                                    SH_Direction_Forward,
                                     100,
                                     1,
                                     SH_Completion_Wait_For,
                                     SH_Next_Action_BrakeHold);
+  delay(200);
   weigthElevation++;
-  if (weigthElevation >= 30)
+  if (weigthElevation >= 15)
   {
     weigthDirection = true;
     weigthMotorOn = false;
@@ -66,16 +66,15 @@ void WeigthMotorMove()
 {
   if (weigthMotorOn)
   {
-    switch (weigthDirection)
+    if(weigthDirection)
     {
-      case true:
-        RunMotor2Down();
-        break;
-
-      case false:
-        RunMotor2Up();
-        break;
+      RunMotor2Down();
     }
+    else
+    {
+      RunMotor2Up();
+    }
+    delay(800);
   }
 }
 
