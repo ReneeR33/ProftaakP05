@@ -4,7 +4,7 @@ SoftwareSerial mySerial(2, 3);
 Adafruit_Fingerprint finger = Adafruit_Fingerprint(&mySerial);
 
 bool addedFingerprint = false;
-
+unsigned long endTimeFingerprint = 0;
 void StartFingerprintscanner() {
   while (!Serial);  // For Yun/Leo/Micro/Zero/...
   delay(100);

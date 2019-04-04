@@ -28,16 +28,13 @@ String CheckMessage()
 
 void UseMessage(String messageDone) {
  
- if (Message != "ADD_FINGERPRINT") {
-    ReadFingerprint();
-  }
-  else if (Message == "ADD_FINGERPRINT") {
+ 
+  if (messageDone == "ADD_FINGERPRINT") {
     Serial.print("Enrolling ID #");
     Serial.println(ID);
     AddFingerprint(ID);
-    Message = "";
   }
-  else if (Message.startsWith("SWITCH_DISK:")) {
+  else if (messageDone.startsWith("SWITCH_DISK:")) {
     SwitchDisk(disk);
   }
   else if (Message == "CUT_START") {
