@@ -4,7 +4,6 @@ SoftwareSerial mySerial(2, 3);
 Adafruit_Fingerprint finger = Adafruit_Fingerprint(&mySerial);
 
 bool addedFingerprint = false;
-unsigned long endTimeFingerprint = 0;
 void StartFingerprintscanner() {
   while (!Serial);  // For Yun/Leo/Micro/Zero/...
   delay(100);
@@ -15,8 +14,7 @@ void StartFingerprintscanner() {
 }
 
 int ReadFingerprint() {
-  if (millis() > endTimeFingerprint) {
-    uint8_t p = finger.getImage();
+  uint8_t p = finger.getImage();
     if (p != FINGERPRINT_OK)  return -1;
 
     p = finger.image2Tz();
@@ -29,10 +27,8 @@ int ReadFingerprint() {
     Serial.print("|Fingerprint_Detected:");
     Serial.print(finger.fingerID);
     Serial.println("%");
-    endTimeFingerprint = 50 + millis();
     return finger.fingerID;
-  }
-  return -1;
+  
 }
 
 uint8_t AddFingerprint(uint8_t id) {
