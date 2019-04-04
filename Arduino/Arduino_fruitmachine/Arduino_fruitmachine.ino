@@ -12,7 +12,7 @@ void setup() {
 }
 
 void loop() {
-  UseMessage(Message);
+  UseMessage(CheckMessage());
   delay(50);
 
 }
