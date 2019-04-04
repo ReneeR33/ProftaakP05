@@ -22,6 +22,8 @@ namespace FruitMachineDing
         {
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["FruitMachineDing.Properties.Settings.FruitDBConnectionString"].ConnectionString;
+            this.FormClosed += new FormClosedEventHandler(FormFruitSnijden_FormClosed);
+            //serial.Connect(); //alleen gebruiken als de arduino is aangesloten
         }
 
         private void BevestigKnop_Click(object sender, EventArgs e)
@@ -81,9 +83,14 @@ namespace FruitMachineDing
             
 
         }
+        void FormFruitSnijden_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //serial.Disconnect();
+        }
 
         private void timer_Tick(object sender, EventArgs e)
         {
+            //hier word code uitgevoerd als arduino iets doorgestuurd heeft
             string[] messages = serial.ReadMessages();
             if (messages != null && messages.Length != 0)
             {
@@ -92,16 +99,12 @@ namespace FruitMachineDing
                     if (message.StartsWith("Fingerprint_Detected:"))
                     {
                         int id;
-                        if (Int32.TryParse(message.Substring(message.IndexOf(":") + 1, message.Length), out id))
+                        if (Int32.TryParse(message.Substring(message.IndexOf(":") + 1), out id))
                         {
-                            MessageBox.Show(id.ToString());
+                            //doe iets met id, (bijv. kijk in database bij welke persoon dit id hoort en laad de juiste gegevens)
                         }
-                        else
-                        {
-                            MessageBox.Show("failed");
-                        }
-
                     }
+                    //else if message =... etc. 
                 }
             }
         }
