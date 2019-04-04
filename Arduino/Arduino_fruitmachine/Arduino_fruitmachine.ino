@@ -12,6 +12,10 @@ void setup() {
 }
 
 void loop() {
-  UseMessage(CheckMessage());
+  String message = CheckMessage();
+  UseMessage(message);
   
+  if (message != "ADD_FINGERPRINT") {
+    ReadFingerprint();
+  }
 }
