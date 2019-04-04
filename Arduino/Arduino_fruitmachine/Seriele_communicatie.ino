@@ -4,21 +4,21 @@ String message = "";
 String CheckMessage()
 {
   String messageDone = "";
-  if (Serial.available() > 0) 
+  if (Serial.available() > 0)
   {
     char incomingByte = (char) Serial.read();
-    if (incomingByte == '|') 
+    if (incomingByte == '|')
     {
       messageWrite = true;
       incomingByte = "";
     }
-    else if (incomingByte == '~') 
+    else if (incomingByte == '~')
     {
       messageDone = message;
       message = "";
       messageWrite = false;
     }
-    else if (messageWrite == true) 
+    else if (messageWrite == true)
     {
       message = message + incomingByte;
     }
@@ -26,6 +26,25 @@ String CheckMessage()
   return messageDone;
 }
 
-void UseMessage(String messageDone){
-  
+void UseMessage(String messageDone) {
+ 
+ if (Message != "ADD_FINGERPRINT") {
+    ReadFingerprint();
+  }
+  else if (Message == "ADD_FINGERPRINT") {
+    Serial.print("Enrolling ID #");
+    Serial.println(ID);
+    AddFingerprint(ID);
+    Message = "";
+  }
+  else if (Message.startsWith("SWITCH_DISK:")) {
+    SwitchDisk(disk);
+  }
+  else if (Message == "CUT_START") {
+    //motorStart = true;
+  }
+  else if (Message == "CUT_STOP") {
+    //StopMotor = true;
+  }
+
 }

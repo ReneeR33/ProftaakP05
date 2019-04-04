@@ -36,11 +36,3 @@ void SwitchDisk(int disk){
     RunMotor1(240, 8);
   }
 }
-
-void StartCutting(){
-  if(startMotor == false){
-    endTimeMotor1 == millis() + 20000;
-    startMotor = true;
-   }
-   if(millis() > endTimeMotor1 && )
-}
