@@ -10,6 +10,7 @@ namespace FruitMachineDing
     {
         public string connectionString;
 
+        Serial serial = new Serial("COM3", 9600, new MessageBuilder('|', '%'));
         Fruitmachine fruitmachine = new Fruitmachine();
         Portie portie1 = new Portie();
         List<string> portie = new List<string>();
@@ -79,6 +80,30 @@ namespace FruitMachineDing
         {
             
 
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            string[] messages = serial.ReadMessages();
+            if (messages != null && messages.Length != 0)
+            {
+                foreach (string message in messages)
+                {
+                    if (message.StartsWith("Fingerprint_Detected:"))
+                    {
+                        int id;
+                        if (Int32.TryParse(message.Substring(message.IndexOf(":") + 1, message.Length), out id))
+                        {
+                            MessageBox.Show(id.ToString());
+                        }
+                        else
+                        {
+                            MessageBox.Show("failed");
+                        }
+
+                    }
+                }
+            }
         }
     }
 }
