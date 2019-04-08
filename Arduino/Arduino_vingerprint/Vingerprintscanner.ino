@@ -6,7 +6,7 @@ Adafruit_Fingerprint finger = Adafruit_Fingerprint(&mySerial);
 bool addedFingerprint = false;
 void StartFingerprintscanner() {
   
-  while (!Serial);  // For Yun/Leo/Micro/Zero/...
+  while (!Serial); 
   delay(100);
   // set the data rate for the sensor serial port
   finger.begin(57600);
