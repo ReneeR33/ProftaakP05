@@ -10,6 +10,12 @@ namespace FruitMachineDing
 {
     class Fruit
     {
+        /// <summary>
+        /// This mehtod returns the descreption of a fruit based on the fruitname you give along with it as parameter.
+        /// </summary>
+        /// <param name="connectionString">SQL Connection String</param>
+        /// <param name="naam">Name of the fruit</param>
+        /// <returns>String</returns>
         public string GiveDescription(string connectionString, string naam)
         {
             string query = "SELECT descriptie FROM Fruit WHERE Name = @FruitName";
@@ -33,6 +39,12 @@ namespace FruitMachineDing
             }
         }
 
+        /// <summary>
+        /// This method returns the vitamines assosiated to the fruit tagged along as parameter.
+        /// </summary>
+        /// <param name="connectionString">SQL Connection String</param>
+        /// <param name="fruit">Name of the fruit</param>
+        /// <returns>List of strings</returns>
         public List<string> GetVitamins(string connectionString, string fruit)
         {
             List<string> vitamins = new List<string>();
@@ -59,6 +71,12 @@ namespace FruitMachineDing
             return vitamins;
         }
 
+        /// <summary>
+        /// This method returns the description of a vitamine.
+        /// </summary>
+        /// <param name="connectionString">SQL Connection String</param>
+        /// <param name="vitamineNaam">The name of a vitamine</param>
+        /// <returns>String</returns>
         public string GetVitamineDesc(string connectionString, string vitamineNaam)
         {
             string query = "SELECT Descriptie FROM Vitamines WHERE Vitamine = @VitamineNaam";
@@ -83,6 +101,12 @@ namespace FruitMachineDing
             }
         }
 
+        /// <summary>
+        /// Get a list of all the vitamines connected to all the fruits in a Listbox added as parameter.
+        /// </summary>
+        /// <param name="connectionString">SQL Connection String</param>
+        /// <param name="items">A listbox.Items</param>
+        /// <returns>List of strings</returns>
         public List<string> TotalVitamine(string connectionString, ListBox.ObjectCollection items)
         {
             List<string> fruitSoorten = new List<string>();
