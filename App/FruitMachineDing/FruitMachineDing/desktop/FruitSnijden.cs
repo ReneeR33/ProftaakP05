@@ -12,6 +12,8 @@ namespace FruitMachineDing
 
         Serial serial = new Serial("COM3", 9600, new MessageBuilder('|', '%'));
         Fruitmachine fruitmachine = new Fruitmachine();
+        Fruit Fruit = new Fruit();
+
         Portie portie1 = new Portie();
         List<string> portie = new List<string>();
         List<string> fruit = new List<string>();
@@ -75,7 +77,7 @@ namespace FruitMachineDing
 
         private void fruitInfoLbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            fruitInfoLbl.Text = Fruit.GiveDescription(connectionString, f_fruitList_lbx.GetItemText(f_fruitList_lbx.SelectedItem));
         }
 
         private void SelectedFruitLbx2_SelectedIndexChanged(object sender, EventArgs e)
