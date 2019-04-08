@@ -128,7 +128,7 @@ namespace FruitMachineDing
 
         private void pe_namesLbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pe_leeftijdInputLbl.Text = Convert.ToString(persoon.GiveAge(connectionString, pe_namesLbx.GetItemText(pe_namesLbx.SelectedIndex)));
+            pe_leeftijdInputLbl.Text = Convert.ToString(persoon.GiveAge(connectionString, pe_namesLbx.GetItemText(pe_namesLbx.SelectedItem)));
             pe_naamInputLbl.Text = pe_namesLbx.GetItemText(pe_namesLbx.SelectedItem);
         }
     }
