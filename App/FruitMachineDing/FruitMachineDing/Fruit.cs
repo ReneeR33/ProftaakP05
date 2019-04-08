@@ -8,13 +8,6 @@ namespace FruitMachineDing
 {
     class Fruit
     {
-        public GetfruitInfo(string naam)
-        {
-            //sql
-        }
-        public GetCalories(string naam)
-        {
-            //sql
-        }
+
     }
 }
