@@ -12,27 +12,29 @@ int currentDisk = 1;
 
 void RunMotor1Left()
 {
-  evshield.bank_b.motorRunDegrees(SH_Motor_1,
+  evshield.bank_a.motorRunDegrees(SH_Motor_1,
                                   SH_Direction_Forward,
-                                  8,
+                                  40,
                                   120 * 5,
                                   SH_Completion_Wait_For,
                                   SH_Next_Action_BrakeHold);
+  delay(2000);
 }
 
 void RunMotor1Right()
 {
-  evshield.bank_b.motorRunDegrees(SH_Motor_1,
+  evshield.bank_a.motorRunDegrees(SH_Motor_1,
                                   SH_Direction_Reverse,
-                                  8,
+                                  40,
                                   120 * 5,
                                   SH_Completion_Wait_For,
                                   SH_Next_Action_BrakeHold);
+  delay(2000);
 }
 
 void RunMotor2Down()
 {
-  evshield.bank_b.motorRunRotations(SH_Motor_2,
+  evshield.bank_a.motorRunRotations(SH_Motor_2,
                                     SH_Direction_Reverse,
                                     100,
                                     1,
@@ -47,13 +49,13 @@ void RunMotor2Down()
 
 void RunMotor2Up()
 {
-  evshield.bank_b.motorRunRotations(SH_Motor_2,
+  evshield.bank_a.motorRunRotations(SH_Motor_2,
                                     SH_Direction_Forward,
                                     100,
                                     1,
                                     SH_Completion_Wait_For,
                                     SH_Next_Action_BrakeHold);
-  delay(200);
+  delay(400);
   weigthElevation++;
   if (weigthElevation >= 15)
   {
@@ -74,15 +76,22 @@ void WeigthMotorMove()
     {
       RunMotor2Up();
     }
+    Serial.print(weigthDirection); Serial.print("\t");
+    Serial.println(weigthElevation);
     delay(800);
   }
 }
 
 void SwitchDisk(int disk) {
-  if ((disk = currentDisk + 1 && disk != 3) || (disk == 1 && currentDisk == 3)) {
-    //RunMotor1(120, 8);
+  if ((disk == currentDisk + 1 && disk != 3) || (disk == 1 && currentDisk == 3)) {
+    RunMotor1Left();
   }
-  else {
-    //RunMotor1(240, 8);
+  else if ((disk == currentDisk - 1 && disk != 0) || (disk == 3 && currentDisk == 1)){
+    RunMotor1Right();
   }
+  else
+  {
+    Serial.println("Disk already Selected");
+  }
+  currentDisk = disk;
 }

@@ -4,7 +4,7 @@ String message = "";
 String CheckMessage()
 {
   String messageDone = "";
-  if (Serial.available() > 0)
+  while (Serial.available() > 0)
   {
     char incomingByte = (char) Serial.read();
     if (incomingByte == '|')
@@ -12,11 +12,12 @@ String CheckMessage()
       messageWrite = true;
       incomingByte = "";
     }
-    else if (incomingByte == '~')
+    else if (incomingByte == '&')
     {
       messageDone = message;
       message = "";
       messageWrite = false;
+      break;
     }
     else if (messageWrite == true)
     {
@@ -35,7 +36,8 @@ void UseMessage(String messageDone) {
     AddFingerprint(ID);
   }
   else if (messageDone.startsWith("SWITCH_DISK:")) {
-    SwitchDisk(disk);
+    messageDone.remove(0, 12);
+    SwitchDisk(messageDone.toInt());
   }
   else if (messageDone == "CUT_START") {
     weigthMotorOn = true;
