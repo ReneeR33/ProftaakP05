@@ -3,22 +3,52 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace FruitMachineDing
 {
     class Persoon
     {
-        public List<string> currentPortie;
+        List<string> personen = new List<string>();
 
-        public Persoon()
+        public List<string> GivePersonNames(string connectionString)
         {
-            currentPortie = new List<string>();
+            string query = "SELECT Naam FROM Persoon ";
+            using (SqlConnection conn = new SqlConnection(Convert.ToString(connectionString)))
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                conn.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        personen.Add(reader.GetString(0));
+                    }
+                }
+            }
+            return personen;
         }
+        public int GiveAge(string connectionString, string naam)
+        {
+            string query = "SELECT age FROM Persoon WHERE naam = '" + naam + "'";
 
-        public List<string> AddToList(string portie)
-        {
-            currentPortie.Add(portie);
-            return currentPortie;
+            using (SqlConnection conn = new SqlConnection(Convert.ToString(connectionString)))
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                conn.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return reader.GetInt32(0);
+                    }
+                    else
+                    {
+                        return -0;
+                    }
+                }
+            }
         }
+        
     }
 }
