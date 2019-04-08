@@ -48,7 +48,6 @@ namespace FruitMachineDing
                     {
                         vitamins.Add(reader.GetString(0));
                     }
-
                 }
             }
             return vitamins;
