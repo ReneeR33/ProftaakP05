@@ -41,10 +41,11 @@ void UseMessage(String messageDone) {
   else if (messageDone == "CUT_STOP") {
     weigthDirection = false;
   }
-  else if (messageDone == "ADD_FINGERPRINT") {
+  else if (messageDone.startsWith("ADD_FINGERPRINT:")) {
     Serial.print("Enrolling ID #");
-    Serial.println(ID);
-    AddFingerprint(ID);
+    messageDone.remove(0, 16);
+    //Serial.println(ID);
+    AddFingerprint(messageDone.toInt());
   }
 
 }
