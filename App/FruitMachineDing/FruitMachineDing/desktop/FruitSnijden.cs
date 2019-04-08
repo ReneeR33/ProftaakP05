@@ -10,8 +10,7 @@ namespace FruitMachineDing
     {
         public string connectionString;
 
-        Serial serial = new Serial("COM3", 9600, new MessageBuilder('|', '&'));
-        //Serial serial2 = new Serial("COM7", 9600, new MessageBuilder('|', '&'));
+        Serial serial = new Serial("COM11", 9600, new MessageBuilder('|', '&'));
         Fruitmachine fruitmachine = new Fruitmachine();
         Fruit Fruit = new Fruit();
         Persoon persoon = new Persoon();
@@ -29,7 +28,7 @@ namespace FruitMachineDing
             connectionString = ConfigurationManager.ConnectionStrings["FruitMachineDing.Properties.Settings.FruitDBConnectionString"].ConnectionString;
             this.FormClosed += new FormClosedEventHandler(FormFruitSnijden_FormClosed);
             serial.Connect();
-            //serial2.Connect();
+            
         }
 
         private void FruitSnijden_Load(object sender, EventArgs e)
@@ -110,7 +109,7 @@ namespace FruitMachineDing
         void FormFruitSnijden_FormClosed(object sender, FormClosedEventArgs e)
         {
             serial.Disconnect();
-            //serial2.Disconnect();
+            
         }
 
         private void timer_Tick(object sender, EventArgs e)
