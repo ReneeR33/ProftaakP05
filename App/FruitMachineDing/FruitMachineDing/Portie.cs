@@ -12,7 +12,11 @@ namespace FruitMachineDing
     {
         List<string> portie = new List<string>();
 
-
+        /// <summary>
+        /// This method returns a (Alphabetically sorted) list of fruit names.
+        /// </summary>
+        /// <param name="connectionString">SQL Connection String</param>
+        /// <returns>List of strings</returns>
         public List<string> GiveFruit(string connectionString)
         {
             List<string> fruit = new List<string>();
@@ -34,6 +38,12 @@ namespace FruitMachineDing
             return fruit;
         }
 
+        /// <summary>
+        /// This method returns a sorted list of Vitamines connected to the fruit name you give along.
+        /// </summary>
+        /// <param name="connectionString">SQL Connection String</param>
+        /// <param name="fruit">Name of fruit</param>
+        /// <returns>List of strings</returns>
         public List<string> GiveVitamins(string connectionString, string fruit)
         {
             List<string> vitamins = new List<string>();
@@ -59,12 +69,22 @@ namespace FruitMachineDing
             return vitamins;
         }
 
+        /// <summary>
+        /// This method adds fruit to a list.
+        /// </summary>
+        /// <param name="Fruit">Name of the fruit</param>
+        /// <returns>List of strings</returns>
         public List<string> AddToList(string Fruit)
         {
             portie.Add(Fruit);
             return portie;
         }
 
+        /// <summary>
+        /// This method removes a certain fruit from a list of fruits.
+        /// </summary>
+        /// <param name="_fruit">Name of fruit to be removed</param>
+        /// <returns>List of strings</returns>
         public List<string> RemoveFromList(string _fruit)
         {
             if (portie.Contains(_fruit))
