@@ -83,10 +83,10 @@ void WeigthMotorMove()
 }
 
 void SwitchDisk(int disk) {
-  if ((disk == currentDisk + 1 && disk != 3) || (disk == 1 && currentDisk == 3)) {
+  if ((disk == currentDisk + 1) || (disk == 1 && currentDisk == 3)) {
     RunMotor1Left();
   }
-  else if ((disk == currentDisk - 1 && disk != 0) || (disk == 3 && currentDisk == 1)){
+  else if ((disk == currentDisk - 1) || (disk == 3 && currentDisk == 1)){
     RunMotor1Right();
   }
   else
