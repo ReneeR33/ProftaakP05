@@ -6,7 +6,7 @@ unsigned long endTimeMotor2;
 
 bool weigthMotorOn = false; //true = motor voor gewicht aan, false = uit
 bool weigthDirection = true; //true = naar beneden, false = naar boven
-int weigthElevation = 15; //30 = boven, 0 = beneden
+int weigthElevation = 20; //30 = boven, 0 = beneden
 
 int currentDisk = 1;
 
@@ -57,7 +57,7 @@ void RunMotor2Up()
                                     SH_Next_Action_BrakeHold);
   delay(400);
   weigthElevation++;
-  if (weigthElevation >= 15)
+  if (weigthElevation >= 20)
   {
     weigthDirection = true;
     weigthMotorOn = false;

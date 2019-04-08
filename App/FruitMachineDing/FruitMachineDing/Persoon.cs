@@ -12,7 +12,7 @@ namespace FruitMachineDing
         List<string> personen = new List<string>();
         public string GiveName(string connectionString, int id)
         {
-            string query = "SELECT Name FROM Persoon WHERE FingerId = @FingerId";
+            string query = "SELECT naam FROM Persoon WHERE FingerId = @FingerId";
 
             using (SqlConnection conn = new SqlConnection(Convert.ToString(connectionString)))
             using (SqlCommand cmd = new SqlCommand(query, conn))
