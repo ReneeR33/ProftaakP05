@@ -32,7 +32,7 @@ namespace FruitMachineDing
             }
         }
 
-        public List<string> GiveVitamins(string connectionString, string fruit)
+        public List<string> GetVitamins(string connectionString, string fruit)
         {
             List<string> vitamins = new List<string>();
             string query = "SELECT a.Vitamine FROM Vitamines a " +
