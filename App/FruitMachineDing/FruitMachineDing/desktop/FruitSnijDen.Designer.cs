@@ -363,7 +363,7 @@
             this.f_fruitList_lbx.Name = "f_fruitList_lbx";
             this.f_fruitList_lbx.Size = new System.Drawing.Size(249, 388);
             this.f_fruitList_lbx.TabIndex = 2;
-            this.f_fruitList_lbx.SelectedIndexChanged += new System.EventHandler(this.fruitInfoLbx_SelectedIndexChanged);
+            this.f_fruitList_lbx.SelectedIndexChanged += new System.EventHandler(this.f_fruitList_lbx_SelectedIndexChanged);
             // 
             // PersoonLbx
             // 

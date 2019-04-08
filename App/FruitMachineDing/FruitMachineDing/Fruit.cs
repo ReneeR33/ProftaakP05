@@ -38,7 +38,8 @@ namespace FruitMachineDing
             string query = "SELECT a.Vitamine FROM Vitamines a " +
                 "INNER JOIN FruitVitamines b ON a.Id = b.VitaminesId " +
                 "WHERE b.FruitId = " +
-                    "(SELECT Id FROM Fruit WHERE Name = @FruitName)";
+                    "(SELECT Id FROM Fruit WHERE Name = @FruitName) " +
+                "ORDER BY a.Vitamine";
 
             using (SqlConnection conn = new SqlConnection(Convert.ToString(connectionString)))
             using (SqlCommand cmd = new SqlCommand(query, conn))

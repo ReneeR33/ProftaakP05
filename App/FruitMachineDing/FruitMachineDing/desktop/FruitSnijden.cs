@@ -96,8 +96,15 @@ namespace FruitMachineDing
 
         // Fruit Tab
 
-        private void fruitInfoLbx_SelectedIndexChanged(object sender, EventArgs e)
+        private void f_fruitList_lbx_SelectedIndexChanged(object sender, EventArgs e)
         {
+            {
+                f_vitaminesSelectedFruit_lbx.Items.Clear();
+                foreach (string x in Fruit.GetVitamins(connectionString, f_fruitList_lbx.SelectedItem.ToString()))
+                {
+                    f_vitaminesSelectedFruit_lbx.Items.Add(x);
+                }
+            }
             fruitInfoLbl.Text = Fruit.GiveDescription(connectionString, f_fruitList_lbx.GetItemText(f_fruitList_lbx.SelectedItem));
         }
 
