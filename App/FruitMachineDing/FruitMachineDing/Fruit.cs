@@ -57,5 +57,29 @@ namespace FruitMachineDing
             }
             return vitamins;
         }
+
+        public string GetVitamineDesc(string connectionString, string vitamineNaam)
+        {
+            string query = "SELECT Descriptie FROM Vitamines WHERE Vitamine = @VitamineNaam";
+
+            using (SqlConnection conn = new SqlConnection(Convert.ToString(connectionString)))
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@VitamineNaam", vitamineNaam);
+                conn.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        string incomming = reader.GetString(0);
+                        return incomming.Replace("|", "\n");
+                    }
+                    else
+                    {
+                        return "unknown";
+                    }
+                }
+            }
+        }
     }
 }

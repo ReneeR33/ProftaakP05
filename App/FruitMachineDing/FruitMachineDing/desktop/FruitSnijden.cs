@@ -38,6 +38,10 @@ namespace FruitMachineDing
             po_fruitLbx.Items.AddRange(portie.ToArray());
             f_fruitList_lbx.Items.AddRange(portie.ToArray());
             pe_namesLbx.Items.AddRange(personen.ToArray());
+
+            po_fruitLbx.SetSelected(0, true);
+            pe_namesLbx.SetSelected(0, true);
+            f_fruitList_lbx.SetSelected(0, true);
         }
 
         // Portie Tab
@@ -104,8 +108,14 @@ namespace FruitMachineDing
                 {
                     f_vitaminesSelectedFruit_lbx.Items.Add(x);
                 }
+                f_vitaminesSelectedFruit_lbx.SetSelected(0, true);
             }
-            fruitInfoLbl.Text = Fruit.GiveDescription(connectionString, f_fruitList_lbx.GetItemText(f_fruitList_lbx.SelectedItem));
+            f_fruitInfo_rtb.Text = Fruit.GiveDescription(connectionString, f_fruitList_lbx.SelectedItem.ToString());
+        }
+
+        private void f_vitaminesSelectedFruit_lbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            f_vitamineInfo_rtb.Text = Fruit.GetVitamineDesc(connectionString, f_vitaminesSelectedFruit_lbx.SelectedItem.ToString());
         }
 
 
