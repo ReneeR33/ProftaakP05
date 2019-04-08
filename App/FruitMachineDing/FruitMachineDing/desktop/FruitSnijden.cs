@@ -88,7 +88,11 @@ namespace FruitMachineDing
 
 
         // Persoon Tab
-
+        private void pe_namesLbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            pe_leeftijdInputLbl.Text = Convert.ToString(persoon.GiveAge(connectionString, pe_namesLbx.GetItemText(pe_namesLbx.SelectedItem)));
+            pe_naamInputLbl.Text = pe_namesLbx.GetItemText(pe_namesLbx.SelectedItem);
+        }
 
         // Fruit Tab
 
@@ -121,9 +125,7 @@ namespace FruitMachineDing
                         int id;
                         if (Int32.TryParse(message.Substring(message.IndexOf(":") + 1), out id))
                         {
-                            //serial2.SendMessage("Fingerprint_OK");
-                            MessageBox.Show("ok");
-                            //Doe iets met id, (bijv. kijk in database bij welke persoon dit id hoort en laad de juiste gegevens)
+                            po_persoonLbl.Text = persoon.GiveName(connectionString, id);
                         }
                     }
                     // Else if message =... etc. 
@@ -131,10 +133,6 @@ namespace FruitMachineDing
             }
         }
 
-        private void pe_namesLbx_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            pe_leeftijdInputLbl.Text = Convert.ToString(persoon.GiveAge(connectionString, pe_namesLbx.GetItemText(pe_namesLbx.SelectedItem)));
-            pe_naamInputLbl.Text = pe_namesLbx.GetItemText(pe_namesLbx.SelectedItem);
-        }
+
     }
 }

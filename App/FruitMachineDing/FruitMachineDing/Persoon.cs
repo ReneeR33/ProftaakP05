@@ -10,7 +10,28 @@ namespace FruitMachineDing
     class Persoon
     {
         List<string> personen = new List<string>();
+        public string GiveName(string connectionString, int id)
+        {
+            string query = "SELECT Name FROM Persoon WHERE FingerId = @FingerId";
 
+            using (SqlConnection conn = new SqlConnection(Convert.ToString(connectionString)))
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@FingerId", id);
+                conn.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return reader.GetString(0);
+                    }
+                    else
+                    {
+                        return "unknown";
+                    }
+                }
+            }
+        }
         public List<string> GivePersonNames(string connectionString)
         {
             string query = "SELECT Naam FROM Persoon ";
