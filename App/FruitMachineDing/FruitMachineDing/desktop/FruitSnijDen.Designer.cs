@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.FruitSelectTab = new System.Windows.Forms.TabControl();
             this.tab_porties = new System.Windows.Forms.TabPage();
             this.BevestigingPanel = new System.Windows.Forms.Panel();
@@ -57,6 +58,7 @@
             this.f_vitaminesSelectedFruit = new System.Windows.Forms.ListBox();
             this.f_fruitList = new System.Windows.Forms.ListBox();
             this.PersoonLbx = new System.Windows.Forms.ListBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.FruitSelectTab.SuspendLayout();
             this.tab_porties.SuspendLayout();
             this.BevestigingPanel.SuspendLayout();
@@ -73,7 +75,7 @@
             this.FruitSelectTab.Controls.Add(this.tab_personen);
             this.FruitSelectTab.Controls.Add(this.tab_fruitInfo);
             this.FruitSelectTab.Location = new System.Drawing.Point(0, 0);
-            this.FruitSelectTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FruitSelectTab.Margin = new System.Windows.Forms.Padding(2);
             this.FruitSelectTab.Name = "FruitSelectTab";
             this.FruitSelectTab.SelectedIndex = 0;
             this.FruitSelectTab.Size = new System.Drawing.Size(676, 379);
@@ -91,9 +93,9 @@
             this.tab_porties.Controls.Add(this.po_fruitLbx);
             this.tab_porties.Controls.Add(this.po_persoonLbl);
             this.tab_porties.Location = new System.Drawing.Point(4, 22);
-            this.tab_porties.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tab_porties.Margin = new System.Windows.Forms.Padding(2);
             this.tab_porties.Name = "tab_porties";
-            this.tab_porties.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tab_porties.Padding = new System.Windows.Forms.Padding(2);
             this.tab_porties.Size = new System.Drawing.Size(668, 353);
             this.tab_porties.TabIndex = 0;
             this.tab_porties.Text = "Porties";
@@ -387,6 +389,11 @@
             this.PersoonLbx.Size = new System.Drawing.Size(120, 96);
             this.PersoonLbx.TabIndex = 0;
             // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // FruitSnijden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,6 +450,7 @@
         private System.Windows.Forms.Label snijschijfLbl;
         private System.Windows.Forms.Button snijschijfBtn;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Timer timer;
     }
 }
 
