@@ -29,25 +29,11 @@ namespace FruitMachineDing
             this.FormClosed += new FormClosedEventHandler(FormFruitSnijden_FormClosed);
             //serial.Connect(); //alleen gebruiken als de arduino is aangesloten
         }
-
-        private void BevestigKnop_Click(object sender, EventArgs e)
+        private void FruitSnijden_Load(object sender, EventArgs e)
         {
-            BevestigingPanel.Visible = true;
-        }
-
-        private void backBtn_Click(object sender, EventArgs e)
-        {
-            BevestigingPanel.Visible = false;
-        }
-
-        private void snijschijfBtn_Click(object sender, EventArgs e)
-        {
-            snijschijfInputLbl.Text = fruitmachine.switchCuttingDisk().ToString();
-        }
-
-        private void BevestigingPanel_VisibleChanged(object sender, EventArgs e)
-        {
-            snijschijfInputLbl.Text = fruitmachine.switchCuttingDisk().ToString();
+            portie = portie1.GiveFruit(connectionString);
+            po_fruitLbx.Items.AddRange(portie.ToArray());
+            f_fruitList_lbx.Items.AddRange(portie.ToArray());
         }
 
         private void selectedFruitLbx_SelectedIndexChanged(object sender, EventArgs e)
@@ -89,6 +75,43 @@ namespace FruitMachineDing
 
 
         }
+
+        // Portie Tab
+
+
+        // Portie Tab Panel
+
+        private void BevestigKnop_Click(object sender, EventArgs e)
+        {
+            BevestigingPanel.Visible = true;
+        }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            BevestigingPanel.Visible = false;
+        }
+
+        private void snijschijfBtn_Click(object sender, EventArgs e)
+        {
+            snijschijfInputLbl.Text = fruitmachine.switchCuttingDisk().ToString();
+        }
+
+        private void BevestigingPanel_VisibleChanged(object sender, EventArgs e)
+        {
+            snijschijfInputLbl.Text = fruitmachine.switchCuttingDisk().ToString();
+        }
+
+
+        // Persoon Tab
+
+
+        // Fruit Tab
+
+
+
+
+        // Seriele communicatie
+
         void FormFruitSnijden_FormClosed(object sender, FormClosedEventArgs e)
         {
             // Serial.Disconnect();
