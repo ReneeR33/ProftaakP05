@@ -30,26 +30,6 @@ namespace FruitMachineDing
             //serial.Connect(); //alleen gebruiken als de arduino is aangesloten
         }
 
-        private void selectedFruitLbx_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            vitamines = portie1.GiveVitamins(connectionString, f_fruitList_lbx.GetItemText(f_fruitList_lbx.SelectedItem));
-            f_vitaminesSelectedFruit_lbx.Items.AddRange(vitamines.ToArray());
-        }
-
-        private void selectedFruitLbx_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            portie = portie1.RemoveFromList(Convert.ToString(po_selectedFruitLbx.GetItemText(po_selectedFruitLbx.SelectedItem)));
-            po_selectedFruitLbx.Items.Clear();
-            po_selectedFruitLbx.Items.AddRange(portie.ToArray());
-        }
-
-        private void FruitLbx_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            portie = portie1.AddToList(po_fruitLbx.GetItemText(po_fruitLbx.SelectedItem));
-            po_selectedFruitLbx.Items.Clear();
-            po_selectedFruitLbx.Items.AddRange(portie.ToArray());
-        }
-
         private void FruitSnijden_Load(object sender, EventArgs e)
         {
             personen = persoon.GivePersonNames(connectionString);
@@ -60,6 +40,26 @@ namespace FruitMachineDing
         }
 
         // Portie Tab
+
+        private void FruitLbx_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            portie = portie1.AddToList(po_fruitLbx.GetItemText(po_fruitLbx.SelectedItem));
+            po_selectedFruitLbx.Items.Clear();
+            po_selectedFruitLbx.Items.AddRange(portie.ToArray());
+        }
+
+        private void selectedFruitLbx_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            portie = portie1.RemoveFromList(Convert.ToString(po_selectedFruitLbx.GetItemText(po_selectedFruitLbx.SelectedItem)));
+            po_selectedFruitLbx.Items.Clear();
+            po_selectedFruitLbx.Items.AddRange(portie.ToArray());
+        }
+
+        private void selectedFruitLbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            vitamines = portie1.GiveVitamins(connectionString, f_fruitList_lbx.GetItemText(f_fruitList_lbx.SelectedItem));
+            f_vitaminesSelectedFruit_lbx.Items.AddRange(vitamines.ToArray());
+        }
 
 
         // Portie Tab Panel
