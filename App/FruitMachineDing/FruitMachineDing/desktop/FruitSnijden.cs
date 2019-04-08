@@ -14,11 +14,13 @@ namespace FruitMachineDing
         //Serial serial2 = new Serial("COM7", 9600, new MessageBuilder('|', '&'));
         Fruitmachine fruitmachine = new Fruitmachine();
         Fruit Fruit = new Fruit();
+        Persoon persoon = new Persoon();
 
         Portie portie1 = new Portie();
         List<string> portie = new List<string>();
         List<string> fruit = new List<string>();
         List<string> vitamines = new List<string>();
+        List<string> personen = new List<string>();
 
 
         public FruitSnijden()
@@ -29,6 +31,40 @@ namespace FruitMachineDing
             serial.Connect();
             //serial2.Connect();
         }
+
+        private void FruitSnijden_Load(object sender, EventArgs e)
+        {
+            personen = persoon.GivePersonNames(connectionString);
+            portie = portie1.GiveFruit(connectionString);
+            po_fruitLbx.Items.AddRange(portie.ToArray());
+            f_fruitList_lbx.Items.AddRange(portie.ToArray());
+            pe_namesLbx.Items.AddRange(personen.ToArray());
+        }
+
+        // Portie Tab
+
+        private void FruitLbx_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            portie = portie1.AddToList(po_fruitLbx.GetItemText(po_fruitLbx.SelectedItem));
+            po_selectedFruitLbx.Items.Clear();
+            po_selectedFruitLbx.Items.AddRange(portie.ToArray());
+        }
+
+        private void selectedFruitLbx_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            portie = portie1.RemoveFromList(Convert.ToString(po_selectedFruitLbx.GetItemText(po_selectedFruitLbx.SelectedItem)));
+            po_selectedFruitLbx.Items.Clear();
+            po_selectedFruitLbx.Items.AddRange(portie.ToArray());
+        }
+
+        private void selectedFruitLbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            vitamines = portie1.GiveVitamins(connectionString, f_fruitList_lbx.GetItemText(f_fruitList_lbx.SelectedItem));
+            f_vitaminesSelectedFruit_lbx.Items.AddRange(vitamines.ToArray());
+        }
+
+
+        // Portie Tab Panel
 
         private void BevestigKnop_Click(object sender, EventArgs e)
         {
@@ -50,43 +86,22 @@ namespace FruitMachineDing
             snijschijfInputLbl.Text = fruitmachine.switchCuttingDisk().ToString();
         }
 
-        private void selectedFruitLbx_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            vitamines = portie1.GiveVitamins(connectionString, f_fruitList_lbx.GetItemText(f_fruitList_lbx.SelectedItem));
-            f_vitaminesSelectedFruit_lbx.Items.AddRange(vitamines.ToArray());
-        }
 
-        private void selectedFruitLbx_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            portie = portie1.RemoveFromList(Convert.ToString(po_selectedFruitLbx.GetItemText(po_selectedFruitLbx.SelectedItem)));
-            po_selectedFruitLbx.Items.Clear();
-            po_selectedFruitLbx.Items.AddRange(portie.ToArray());
-        }
+        // Persoon Tab
 
-        private void FruitLbx_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            portie = portie1.AddToList(po_fruitLbx.GetItemText(po_fruitLbx.SelectedItem));
-            po_selectedFruitLbx.Items.Clear();
-            po_selectedFruitLbx.Items.AddRange(portie.ToArray());
-        }
 
-        private void FruitSnijden_Load(object sender, EventArgs e)
-        {
-            portie = portie1.GiveFruit(connectionString);
-            po_fruitLbx.Items.AddRange(portie.ToArray());
-            f_fruitList_lbx.Items.AddRange(portie.ToArray());
-        }
+        // Fruit Tab
 
         private void fruitInfoLbx_SelectedIndexChanged(object sender, EventArgs e)
         {
             fruitInfoLbl.Text = Fruit.GiveDescription(connectionString, f_fruitList_lbx.GetItemText(f_fruitList_lbx.SelectedItem));
         }
 
-        private void SelectedFruitLbx2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
 
-        }
+
+
+        // Seriele communicatie
+
         void FormFruitSnijden_FormClosed(object sender, FormClosedEventArgs e)
         {
             serial.Disconnect();
@@ -114,6 +129,12 @@ namespace FruitMachineDing
                     // Else if message =... etc. 
                 }
             }
+        }
+
+        private void pe_namesLbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            pe_leeftijdInputLbl.Text = Convert.ToString(persoon.GiveAge(connectionString, pe_namesLbx.GetItemText(pe_namesLbx.SelectedIndex)));
+            pe_naamInputLbl.Text = pe_namesLbx.GetItemText(pe_namesLbx.SelectedItem);
         }
     }
 }
