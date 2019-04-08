@@ -12,6 +12,8 @@ namespace FruitMachineDing
 
         Serial serial = new Serial("COM3", 9600, new MessageBuilder('|', '%'));
         Fruitmachine fruitmachine = new Fruitmachine();
+        Fruit Fruit = new Fruit();
+
         Portie portie1 = new Portie();
         List<string> portie = new List<string>();
         List<string> fruit = new List<string>();
@@ -48,8 +50,8 @@ namespace FruitMachineDing
 
         private void selectedFruitLbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            vitamines = portie1.GiveVitamins(connectionString, f_fruitList.GetItemText(f_fruitList.SelectedItem));
-            f_vitaminesSelectedFruit.Items.AddRange(vitamines.ToArray());
+            vitamines = portie1.GiveVitamins(connectionString, f_fruitList_lbx.GetItemText(f_fruitList_lbx.SelectedItem));
+            f_vitaminesSelectedFruit_lbx.Items.AddRange(vitamines.ToArray());
         }
 
         private void selectedFruitLbx_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -70,12 +72,12 @@ namespace FruitMachineDing
         {
             portie = portie1.GiveFruit(connectionString);
             po_fruitLbx.Items.AddRange(portie.ToArray());
-            f_fruitList.Items.AddRange(portie.ToArray());
+            f_fruitList_lbx.Items.AddRange(portie.ToArray());
         }
 
         private void fruitInfoLbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            fruitInfoLbl.Text = Fruit.GiveDescription(connectionString, f_fruitList_lbx.GetItemText(f_fruitList_lbx.SelectedItem));
         }
 
         private void SelectedFruitLbx2_SelectedIndexChanged(object sender, EventArgs e)
@@ -85,12 +87,12 @@ namespace FruitMachineDing
         }
         void FormFruitSnijden_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //serial.Disconnect();
+            // Serial.Disconnect();
         }
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            //hier word code uitgevoerd als arduino iets doorgestuurd heeft
+            // Hier word code uitgevoerd als arduino iets doorgestuurd heeft
             string[] messages = serial.ReadMessages();
             if (messages != null && messages.Length != 0)
             {
@@ -101,10 +103,10 @@ namespace FruitMachineDing
                         int id;
                         if (Int32.TryParse(message.Substring(message.IndexOf(":") + 1), out id))
                         {
-                            //doe iets met id, (bijv. kijk in database bij welke persoon dit id hoort en laad de juiste gegevens)
+                            // Doe iets met id, (bijv. kijk in database bij welke persoon dit id hoort en laad de juiste gegevens)
                         }
                     }
-                    //else if message =... etc. 
+                    // Else if message =... etc. 
                 }
             }
         }
