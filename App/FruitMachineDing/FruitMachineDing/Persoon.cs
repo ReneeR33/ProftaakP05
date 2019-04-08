@@ -13,7 +13,8 @@ namespace FruitMachineDing
 
         public List<string> GivePersonNames(string connectionString)
         {
-            string query = "SELECT Naam FROM Persoon ";
+            string query = "SELECT Naam FROM Persoon " +
+                "ORDER BY Naam";
             using (SqlConnection conn = new SqlConnection(Convert.ToString(connectionString)))
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
