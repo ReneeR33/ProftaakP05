@@ -44,3 +44,15 @@ C:\Users\Renée\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDi
 C:\Users\Renée\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.csproj.CoreCompileInputs.cache
 C:\Users\Renée\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.exe
 C:\Users\Renée\Documents\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.pdb
+C:\Users\joche\OneDrive\Documenten\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\bin\Debug\dal\FruitDB.mdf
+C:\Users\joche\OneDrive\Documenten\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\bin\Debug\dal\FruitDB_log.ldf
+C:\Users\joche\OneDrive\Documenten\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\bin\Debug\FruitMachineDing.exe.config
+C:\Users\joche\OneDrive\Documenten\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\bin\Debug\FruitMachineDing.exe
+C:\Users\joche\OneDrive\Documenten\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\bin\Debug\FruitMachineDing.pdb
+C:\Users\joche\OneDrive\Documenten\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.csprojAssemblyReference.cache
+C:\Users\joche\OneDrive\Documenten\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.FruitSnijden.resources
+C:\Users\joche\OneDrive\Documenten\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.Properties.Resources.resources
+C:\Users\joche\OneDrive\Documenten\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.csproj.GenerateResource.cache
+C:\Users\joche\OneDrive\Documenten\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.csproj.CoreCompileInputs.cache
+C:\Users\joche\OneDrive\Documenten\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.exe
+C:\Users\joche\OneDrive\Documenten\GitHub\ProftaakP05\App\FruitMachineDing\FruitMachineDing\obj\Debug\FruitMachineDing.pdb

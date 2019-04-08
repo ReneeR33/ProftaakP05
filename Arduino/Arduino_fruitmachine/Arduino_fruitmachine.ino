@@ -20,7 +20,7 @@ void loop() {
   String message = CheckMessage();
   UseMessage(message);
 
-  if (message != "ADD_FINGERPRINT" && millis() > endTimeFingerprint) {
+  if (message.startsWith("ADD_FINGERPRINT:") !=  true && millis() > endTimeFingerprint) {
     ReadFingerprint();
     endTimeFingerprint = millis() + 50;
   }

@@ -10,12 +10,11 @@ namespace FruitMachineDing
     {
         public string connectionString;
 
-        Serial serial = new Serial("COM3", 9600, new MessageBuilder('|', '&'));
-        //Serial serial2 = new Serial("COM7", 9600, new MessageBuilder('|', '&'));
+        Serial serial = new Serial("COM11", 9600, new MessageBuilder('|', '&'));
         Fruitmachine fruitmachine = new Fruitmachine();
         Fruit Fruit = new Fruit();
         Persoon persoon = new Persoon();
-
+        bool stand = true;
         Portie portie1 = new Portie();
         List<string> portie = new List<string>();
         List<string> fruit = new List<string>();
@@ -28,8 +27,8 @@ namespace FruitMachineDing
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["FruitMachineDing.Properties.Settings.FruitDBConnectionString"].ConnectionString;
             this.FormClosed += new FormClosedEventHandler(FormFruitSnijden_FormClosed);
-            //serial.Connect();
-            //serial2.Connect();
+            serial.Connect();
+            
         }
 
         private void FruitSnijden_Load(object sender, EventArgs e)
@@ -79,6 +78,7 @@ namespace FruitMachineDing
         private void snijschijfBtn_Click(object sender, EventArgs e)
         {
             snijschijfInputLbl.Text = fruitmachine.switchCuttingDisk().ToString();
+            serial.SendMessage("SWITCH_DISK:"+fruitmachine.SelectedDisk.ToString());
         }
 
         private void BevestigingPanel_VisibleChanged(object sender, EventArgs e)
@@ -88,7 +88,11 @@ namespace FruitMachineDing
 
 
         // Persoon Tab
-
+        private void pe_namesLbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            pe_leeftijdInputLbl.Text = Convert.ToString(persoon.GiveAge(connectionString, pe_namesLbx.GetItemText(pe_namesLbx.SelectedItem)));
+            pe_naamInputLbl.Text = pe_namesLbx.GetItemText(pe_namesLbx.SelectedItem);
+        }
 
         // Fruit Tab
 
@@ -112,7 +116,7 @@ namespace FruitMachineDing
         void FormFruitSnijden_FormClosed(object sender, FormClosedEventArgs e)
         {
             serial.Disconnect();
-            //serial2.Disconnect();
+            
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -128,9 +132,7 @@ namespace FruitMachineDing
                         int id;
                         if (Int32.TryParse(message.Substring(message.IndexOf(":") + 1), out id))
                         {
-                            //serial2.SendMessage("Fingerprint_OK");
-                            MessageBox.Show("ok");
-                            //Doe iets met id, (bijv. kijk in database bij welke persoon dit id hoort en laad de juiste gegevens)
+                            po_persoonLbl.Text = persoon.GiveName(connectionString, id);
                         }
                     }
                     // Else if message =... etc. 
@@ -138,10 +140,17 @@ namespace FruitMachineDing
             }
         }
 
-        private void pe_namesLbx_SelectedIndexChanged(object sender, EventArgs e)
+        private void persBtn_Click(object sender, EventArgs e)
         {
-            pe_leeftijdInputLbl.Text = Convert.ToString(persoon.GiveAge(connectionString, pe_namesLbx.GetItemText(pe_namesLbx.SelectedItem)));
-            pe_naamInputLbl.Text = pe_namesLbx.GetItemText(pe_namesLbx.SelectedItem);
+            stand = !stand;
+            if (stand == true)
+            {
+                serial.SendMessage("CUT_STOP");
+            }
+            else
+            {
+                serial.SendMessage("CUT_START");
+            }
         }
     }
 }
