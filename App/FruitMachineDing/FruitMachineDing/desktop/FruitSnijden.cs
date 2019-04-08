@@ -14,7 +14,7 @@ namespace FruitMachineDing
         Fruitmachine fruitmachine = new Fruitmachine();
         Fruit Fruit = new Fruit();
         Persoon persoon = new Persoon();
-
+        bool stand = true;
         Portie portie1 = new Portie();
         List<string> portie = new List<string>();
         List<string> fruit = new List<string>();
@@ -78,6 +78,7 @@ namespace FruitMachineDing
         private void snijschijfBtn_Click(object sender, EventArgs e)
         {
             snijschijfInputLbl.Text = fruitmachine.switchCuttingDisk().ToString();
+            serial.SendMessage("SWITCH_DISK:"+fruitmachine.SelectedDisk.ToString());
         }
 
         private void BevestigingPanel_VisibleChanged(object sender, EventArgs e)
@@ -132,6 +133,17 @@ namespace FruitMachineDing
             }
         }
 
-
+        private void persBtn_Click(object sender, EventArgs e)
+        {
+            stand = !stand;
+            if (stand == true)
+            {
+                serial.SendMessage("CUT_STOP");
+            }
+            else
+            {
+                serial.SendMessage("CUT_START");
+            }
+        }
     }
 }
