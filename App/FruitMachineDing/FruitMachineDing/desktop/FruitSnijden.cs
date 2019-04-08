@@ -78,7 +78,7 @@ namespace FruitMachineDing
         private void snijschijfBtn_Click(object sender, EventArgs e)
         {
             snijschijfInputLbl.Text = fruitmachine.switchCuttingDisk().ToString();
-            serial.SendMessage("SWITCH_DISK:"+fruitmachine.SelectedDisk.ToString());
+            serial.SendMessage("SWITCH_DISK:"+Convert.ToString(fruitmachine.disk));
         }
 
         private void BevestigingPanel_VisibleChanged(object sender, EventArgs e)

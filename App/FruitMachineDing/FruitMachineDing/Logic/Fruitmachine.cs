@@ -8,26 +8,20 @@ namespace FruitMachineDing
 {
     class Fruitmachine
     {
-        public enum disk
-        {
-            disk1 = 1,
-            disk2,
-            disk3,
-        }
-        private disk selectedDisk = disk.disk1;
-        public disk SelectedDisk
-        {
-            get { return selectedDisk; }
-        }
+
+        public int disk = 1;
         
-        public disk switchCuttingDisk()
+        public int switchCuttingDisk()
         {
-            int nextValue = (int)SelectedDisk + 1;
-            if (nextValue > 3)
+            if (disk == 3)
             {
-                selectedDisk = (disk)nextValue;
+                disk = 1;
             }
-            return selectedDisk;
+            else
+            {
+                disk++;
+            }
+            return disk;
         }
 
         public void cutFruit()
