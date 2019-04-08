@@ -10,7 +10,8 @@ namespace FruitMachineDing
     {
         public string connectionString;
 
-        Serial serial = new Serial("COM3", 9600, new MessageBuilder('|', '%'));
+        Serial serial = new Serial("COM3", 9600, new MessageBuilder('|', '&'));
+        //Serial serial2 = new Serial("COM7", 9600, new MessageBuilder('|', '&'));
         Fruitmachine fruitmachine = new Fruitmachine();
         Fruit Fruit = new Fruit();
         Persoon persoon = new Persoon();
@@ -27,7 +28,8 @@ namespace FruitMachineDing
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["FruitMachineDing.Properties.Settings.FruitDBConnectionString"].ConnectionString;
             this.FormClosed += new FormClosedEventHandler(FormFruitSnijden_FormClosed);
-            //serial.Connect(); //alleen gebruiken als de arduino is aangesloten
+            serial.Connect();
+            //serial2.Connect();
         }
 
         private void FruitSnijden_Load(object sender, EventArgs e)
@@ -102,7 +104,8 @@ namespace FruitMachineDing
 
         void FormFruitSnijden_FormClosed(object sender, FormClosedEventArgs e)
         {
-            // Serial.Disconnect();
+            serial.Disconnect();
+            //serial2.Disconnect();
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -118,7 +121,9 @@ namespace FruitMachineDing
                         int id;
                         if (Int32.TryParse(message.Substring(message.IndexOf(":") + 1), out id))
                         {
-                            // Doe iets met id, (bijv. kijk in database bij welke persoon dit id hoort en laad de juiste gegevens)
+                            //serial2.SendMessage("Fingerprint_OK");
+                            MessageBox.Show("ok");
+                            //Doe iets met id, (bijv. kijk in database bij welke persoon dit id hoort en laad de juiste gegevens)
                         }
                     }
                     // Else if message =... etc. 
@@ -128,7 +133,7 @@ namespace FruitMachineDing
 
         private void pe_namesLbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pe_leeftijdInputLbl.Text = Convert.ToString(persoon.GiveAge(connectionString, pe_namesLbx.GetItemText(pe_namesLbx.SelectedIndex)));
+            pe_leeftijdInputLbl.Text = Convert.ToString(persoon.GiveAge(connectionString, pe_namesLbx.GetItemText(pe_namesLbx.SelectedItem)));
             pe_naamInputLbl.Text = pe_namesLbx.GetItemText(pe_namesLbx.SelectedItem);
         }
     }

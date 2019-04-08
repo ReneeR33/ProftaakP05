@@ -30,12 +30,8 @@ String CheckMessage()
 void UseMessage(String messageDone) {
  
  
-  if (messageDone == "ADD_FINGERPRINT") {
-    Serial.print("Enrolling ID #");
-    Serial.println(ID);
-    AddFingerprint(ID);
-  }
-  else if (messageDone.startsWith("SWITCH_DISK:")) {
+  
+  if (messageDone.startsWith("SWITCH_DISK:")) {
     messageDone.remove(0, 12);
     SwitchDisk(messageDone.toInt());
   }
@@ -44,6 +40,11 @@ void UseMessage(String messageDone) {
   }
   else if (messageDone == "CUT_STOP") {
     weigthDirection = false;
+  }
+  else if (messageDone == "ADD_FINGERPRINT") {
+    Serial.print("Enrolling ID #");
+    Serial.println(ID);
+    AddFingerprint(ID);
   }
 
 }
