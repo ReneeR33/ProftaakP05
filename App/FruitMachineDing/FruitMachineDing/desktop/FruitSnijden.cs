@@ -18,7 +18,6 @@ namespace FruitMachineDing
         Portie portie1 = new Portie();
         List<string> portie = new List<string>();
         List<string> fruit = new List<string>();
-        List<string> vitamines = new List<string>();
         List<string> personen = new List<string>();
 
 
@@ -27,7 +26,7 @@ namespace FruitMachineDing
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["FruitMachineDing.Properties.Settings.FruitDBConnectionString"].ConnectionString;
             this.FormClosed += new FormClosedEventHandler(FormFruitSnijden_FormClosed);
-            serial.Connect();
+            //serial.Connect();
             
         }
 
@@ -38,15 +37,27 @@ namespace FruitMachineDing
             po_fruitLbx.Items.AddRange(portie.ToArray());
             f_fruitList_lbx.Items.AddRange(portie.ToArray());
             pe_namesLbx.Items.AddRange(personen.ToArray());
+
+            po_fruitLbx.SetSelected(0, true);
+            pe_namesLbx.SetSelected(0, true);
+            f_fruitList_lbx.SetSelected(0, true);
         }
 
         // Portie Tab
 
         private void FruitLbx_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            // Adding to the next listbox
             portie = portie1.AddToList(po_fruitLbx.GetItemText(po_fruitLbx.SelectedItem));
             po_selectedFruitLbx.Items.Clear();
             po_selectedFruitLbx.Items.AddRange(portie.ToArray());
+            po_selectedFruitLbx.SetSelected(po_selectedFruitLbx.Items.Count-1, true);
+            // Adding Vitamines to the collective/total Vitamine listbox
+            po_vitamineLbx.Items.Clear();
+            foreach (var x in Fruit.TotalVitamine(connectionString, po_selectedFruitLbx.Items))
+            {
+                po_vitamineLbx.Items.Add(x);
+            }
         }
 
         private void selectedFruitLbx_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -54,14 +65,17 @@ namespace FruitMachineDing
             portie = portie1.RemoveFromList(Convert.ToString(po_selectedFruitLbx.GetItemText(po_selectedFruitLbx.SelectedItem)));
             po_selectedFruitLbx.Items.Clear();
             po_selectedFruitLbx.Items.AddRange(portie.ToArray());
+            try
+            {
+                po_selectedFruitLbx.SetSelected(po_selectedFruitLbx.Items.Count - 1, true);
+            }
+            catch (System.ArgumentOutOfRangeException) { }
+            po_vitamineLbx.Items.Clear();
+            foreach (var x in Fruit.TotalVitamine(connectionString, po_selectedFruitLbx.Items))
+            {
+                po_vitamineLbx.Items.Add(x);
+            }
         }
-
-        private void selectedFruitLbx_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            vitamines = portie1.GiveVitamins(connectionString, f_fruitList_lbx.GetItemText(f_fruitList_lbx.SelectedItem));
-            f_vitaminesSelectedFruit_lbx.Items.AddRange(vitamines.ToArray());
-        }
-
 
         // Portie Tab Panel
 
@@ -104,8 +118,14 @@ namespace FruitMachineDing
                 {
                     f_vitaminesSelectedFruit_lbx.Items.Add(x);
                 }
+                f_vitaminesSelectedFruit_lbx.SetSelected(0, true);
             }
-            fruitInfoLbl.Text = Fruit.GiveDescription(connectionString, f_fruitList_lbx.GetItemText(f_fruitList_lbx.SelectedItem));
+            f_fruitInfo_rtb.Text = Fruit.GiveDescription(connectionString, f_fruitList_lbx.SelectedItem.ToString());
+        }
+
+        private void f_vitaminesSelectedFruit_lbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            f_vitamineInfo_rtb.Text = Fruit.GetVitamineDesc(connectionString, f_vitaminesSelectedFruit_lbx.SelectedItem.ToString());
         }
 
 

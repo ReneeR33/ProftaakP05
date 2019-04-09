@@ -94,4 +94,10 @@ void SwitchDisk(int disk) {
     Serial.println("Disk already Selected");
   }
   currentDisk = disk;
+  if(currentDisk == 3){
+    nextDisk = 1;
+  }
+  else{
+    nextDisk = currentDisk + 1;
+  }
 }
