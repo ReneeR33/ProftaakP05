@@ -6,7 +6,7 @@ unsigned long endTimeMotor2;
 
 bool weigthMotorOn = false; //true = motor voor gewicht aan, false = uit
 bool weigthDirection = true; //true = naar beneden, false = naar boven
-int weigthElevation = 20; //20 = boven, 0 = beneden (hou dit 1 lager dan de max elevation, bij het uploaden/restarten zakt het gewicht een beetje
+int weigthElevation = 20; //20 = boven, 0 = beneden
 
 int currentDisk = 1;
 
