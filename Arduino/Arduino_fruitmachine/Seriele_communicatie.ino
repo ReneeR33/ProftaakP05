@@ -36,7 +36,7 @@ void UseMessage(String messageDone) {
     SwitchDisk(messageDone.toInt());
   }
   else if (messageDone == "CUT_START") {
-    weigthMotorOn = true;
+    SwitchWeightMotorOn();
   }
   else if (messageDone == "CUT_STOP") {
     weigthDirection = false;

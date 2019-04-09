@@ -19,6 +19,12 @@ void setup() {
   evshield.init( SH_HardwareI2C );
   evshield.bank_a.motorReset();
   evshield.bank_b.motorReset();
+  evshield.bank_a.motorRunDegrees(SH_Motor_2,
+                                    SH_Direction_Forward,
+                                    100,
+                                    200,
+                                    SH_Completion_Wait_For,
+                                    SH_Next_Action_BrakeHold);
 }
 
 void loop() {
@@ -37,7 +43,7 @@ void loop() {
   }
 
   if(button2Value == HIGH){
-    WeigthMotorMove();
+    SwitchWeightMotorOn();
   }
   
   WeigthMotorMove();
