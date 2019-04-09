@@ -6,7 +6,7 @@ unsigned long endTimeMotor2;
 
 bool weigthMotorOn = false; //true = motor voor gewicht aan, false = uit
 bool weigthDirection = true; //true = naar beneden, false = naar boven
-int weigthElevation = 18; //30 = boven, 0 = beneden (hou dit 1 lager dan de max elevation, bij het uploaden/restarten zakt het gewicht een beetje
+int weigthElevation = 20; //20 = boven, 0 = beneden (hou dit 1 lager dan de max elevation, bij het uploaden/restarten zakt het gewicht een beetje
 
 int currentDisk = 1;
 
@@ -18,7 +18,6 @@ void RunMotor1Left()
                                   120 * 5,
                                   SH_Completion_Wait_For,
                                   SH_Next_Action_BrakeHold);
-  delay(2000);
 }
 
 void RunMotor1Right()
@@ -29,7 +28,6 @@ void RunMotor1Right()
                                   120 * 5,
                                   SH_Completion_Wait_For,
                                   SH_Next_Action_BrakeHold);
-  delay(2000);
 }
 
 void RunMotor2Down()
@@ -49,13 +47,12 @@ void RunMotor2Down()
 
 void RunMotor2Up()
 {
-  evshield.bank_a.motorRunRotations(SH_Motor_2,
+  evshield.bank_a.motorRunDegrees(SH_Motor_2,
                                     SH_Direction_Forward,
                                     100,
-                                    1,
+                                    381,
                                     SH_Completion_Wait_For,
                                     SH_Next_Action_BrakeHold);
-  delay(500);
   weigthElevation++;
   if (weigthElevation >= 20)
   {
@@ -78,7 +75,6 @@ void WeigthMotorMove()
     }
     Serial.print(weigthDirection); Serial.print("\t");
     Serial.println(weigthElevation);
-    delay(500);
   }
 }
 
@@ -100,4 +96,11 @@ void SwitchDisk(int disk) {
   else{
     nextDisk = currentDisk + 1;
   }
+  Serial.print("Next Disk: ");
+  Serial.println(nextDisk);
+}
+
+void SwitchWeightMotorOn()
+{
+  weigthMotorOn = true;
 }
