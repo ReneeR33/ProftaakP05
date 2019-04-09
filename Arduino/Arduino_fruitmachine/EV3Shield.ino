@@ -6,7 +6,7 @@ unsigned long endTimeMotor2;
 
 bool weigthMotorOn = false; //true = motor voor gewicht aan, false = uit
 bool weigthDirection = true; //true = naar beneden, false = naar boven
-int weigthElevation = 20; //30 = boven, 0 = beneden
+int weigthElevation = 18; //30 = boven, 0 = beneden (hou dit 1 lager dan de max elevation, bij het uploaden/restarten zakt het gewicht een beetje
 
 int currentDisk = 1;
 
@@ -55,7 +55,7 @@ void RunMotor2Up()
                                     1,
                                     SH_Completion_Wait_For,
                                     SH_Next_Action_BrakeHold);
-  delay(400);
+  delay(500);
   weigthElevation++;
   if (weigthElevation >= 20)
   {
@@ -78,7 +78,7 @@ void WeigthMotorMove()
     }
     Serial.print(weigthDirection); Serial.print("\t");
     Serial.println(weigthElevation);
-    delay(800);
+    delay(500);
   }
 }
 
