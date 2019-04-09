@@ -26,6 +26,7 @@ namespace FruitMachineDing
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["FruitMachineDing.Properties.Settings.FruitDBConnectionString"].ConnectionString;
             this.FormClosed += new FormClosedEventHandler(FormFruitSnijden_FormClosed);
+            po_persoonLbl.Text = "";
             //serial.Connect();
             
         }
