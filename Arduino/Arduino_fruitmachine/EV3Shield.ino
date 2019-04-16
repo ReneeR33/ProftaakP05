@@ -6,7 +6,7 @@ unsigned long endTimeMotor2;
 
 bool weigthMotorOn = false; //true = motor voor gewicht aan, false = uit
 bool weigthDirection = true; //true = naar beneden, false = naar boven
-int weigthElevation = 20; //20 = boven, 0 = beneden (hou dit 1 lager dan de max elevation, bij het uploaden/restarten zakt het gewicht een beetje
+int weigthElevation = 20; //20 = boven, 0 = beneden
 
 int currentDisk = 1;
 
@@ -16,7 +16,7 @@ void RunMotor1Left()
                                   SH_Direction_Forward,
                                   40,
                                   120 * 5,
-                                  SH_Completion_Wait_For,
+                                  SH_Completion_Wait_For, //BLOCKING
                                   SH_Next_Action_BrakeHold);
 }
 
@@ -26,7 +26,7 @@ void RunMotor1Right()
                                   SH_Direction_Reverse,
                                   40,
                                   120 * 5,
-                                  SH_Completion_Wait_For,
+                                  SH_Completion_Wait_For, //BLOCKING
                                   SH_Next_Action_BrakeHold);
 }
 
@@ -36,7 +36,7 @@ void RunMotor2Down()
                                     SH_Direction_Reverse,
                                     100,
                                     1,
-                                    SH_Completion_Wait_For,
+                                    SH_Completion_Wait_For, //BLOCKING
                                     SH_Next_Action_BrakeHold);
   weigthElevation--;
   if (weigthElevation <= 0)
@@ -51,7 +51,7 @@ void RunMotor2Up()
                                     SH_Direction_Forward,
                                     100,
                                     381,
-                                    SH_Completion_Wait_For,
+                                    SH_Completion_Wait_For, //BLOCKING
                                     SH_Next_Action_BrakeHold);
   weigthElevation++;
   if (weigthElevation >= 20)
