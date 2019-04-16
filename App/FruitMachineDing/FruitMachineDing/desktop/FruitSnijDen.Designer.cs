@@ -110,7 +110,7 @@
             this.BevestigingPanel.Controls.Add(this.snijschijfInputLbl);
             this.BevestigingPanel.Controls.Add(this.snijschijfLbl);
             this.BevestigingPanel.Controls.Add(this.snijschijfBtn);
-            this.BevestigingPanel.Location = new System.Drawing.Point(466, 148);
+            this.BevestigingPanel.Location = new System.Drawing.Point(526, 215);
             this.BevestigingPanel.Margin = new System.Windows.Forms.Padding(2);
             this.BevestigingPanel.Name = "BevestigingPanel";
             this.BevestigingPanel.Size = new System.Drawing.Size(670, 356);

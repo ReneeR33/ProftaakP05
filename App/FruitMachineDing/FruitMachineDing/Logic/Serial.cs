@@ -74,7 +74,7 @@ namespace FruitMachineDing
         {
             if (!serialPort.IsOpen)
             {
-                serialPort.Open();
+                //serialPort.Open();
                 if (serialPort.IsOpen)
                 {
                     serialPort.DiscardInBuffer();
