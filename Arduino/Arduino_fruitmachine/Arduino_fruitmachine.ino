@@ -23,7 +23,7 @@ void setup() {
                                     SH_Direction_Forward,
                                     100,
                                     200,
-                                    SH_Completion_Wait_For,
+                                    SH_Completion_Wait_For, //BLOCKING
                                     SH_Next_Action_BrakeHold);
 }
 
