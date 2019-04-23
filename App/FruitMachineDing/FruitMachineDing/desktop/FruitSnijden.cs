@@ -28,7 +28,6 @@ namespace FruitMachineDing
             this.FormClosed += new FormClosedEventHandler(FormFruitSnijden_FormClosed);
             po_persoonLbl.Text = "";
             serial.Connect();
-            
         }
 
         private void FruitSnijden_Load(object sender, EventArgs e)
@@ -129,15 +128,11 @@ namespace FruitMachineDing
             f_vitamineInfo_rtb.Text = Fruit.GetVitamineDesc(connectionString, f_vitaminesSelectedFruit_lbx.SelectedItem.ToString());
         }
 
-
-
-
         // Seriele communicatie
 
         void FormFruitSnijden_FormClosed(object sender, FormClosedEventArgs e)
         {
             serial.Disconnect();
-            
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -153,7 +148,9 @@ namespace FruitMachineDing
                         int id;
                         if (Int32.TryParse(message.Substring(message.IndexOf(":") + 1), out id))
                         {
-                            po_persoonLbl.Text = persoon.GiveName(connectionString, id);
+                            string persoonnaam = persoon.GiveName(connectionString, id);
+                            po_persoonLbl.Text = persoonnaam;
+                            serial.SendMessage(persoonnaam);
                         }
                     }
                     // Else if message =... etc. 
@@ -163,15 +160,7 @@ namespace FruitMachineDing
 
         private void persBtn_Click(object sender, EventArgs e)
         {
-            stand = !stand;
-            if (stand == true)
-            {
-                serial.SendMessage("CUT_STOP");
-            }
-            else
-            {
-                serial.SendMessage("CUT_START");
-            }
+            stand = fruitmachine.FruitCut(serial, stand);
         }
     }
 }

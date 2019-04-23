@@ -68,6 +68,7 @@
       <DependentUpon>FruitDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Fruit.cs" />
+    <Compile Include="Logic\Database.cs" />
     <Compile Include="Logic\Fruitmachine.cs" />
     <Compile Include="desktop\FruitSnijden.cs">
       <SubType>Form</SubType>
