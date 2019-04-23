@@ -24,9 +24,17 @@ namespace FruitMachineDing
             return disk;
         }
 
-        public void cutFruit()
+        public bool FruitCut(Serial serial, bool stand)
         {
-            //zet motor aan
+            if (stand)
+            {
+                serial.SendMessage("CUT_START");
+            }
+            else
+            {
+                serial.SendMessage("CUT_STOP");
+            }
+            return !stand;
         }
     }
 }

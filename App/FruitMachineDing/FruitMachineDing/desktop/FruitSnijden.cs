@@ -129,15 +129,11 @@ namespace FruitMachineDing
             f_vitamineInfo_rtb.Text = Fruit.GetVitamineDesc(connectionString, f_vitaminesSelectedFruit_lbx.SelectedItem.ToString());
         }
 
-
-
-
         // Seriele communicatie
 
         void FormFruitSnijden_FormClosed(object sender, FormClosedEventArgs e)
         {
             serial.Disconnect();
-            
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -163,15 +159,7 @@ namespace FruitMachineDing
 
         private void persBtn_Click(object sender, EventArgs e)
         {
-            stand = !stand;
-            if (stand == true)
-            {
-                serial.SendMessage("CUT_STOP");
-            }
-            else
-            {
-                serial.SendMessage("CUT_START");
-            }
+            stand = fruitmachine.FruitCut(serial, stand);
         }
     }
 }
