@@ -28,7 +28,6 @@ namespace FruitMachineDing
             this.FormClosed += new FormClosedEventHandler(FormFruitSnijden_FormClosed);
             po_persoonLbl.Text = "";
             serial.Connect();
-            
         }
 
         private void FruitSnijden_Load(object sender, EventArgs e)
