@@ -149,7 +149,9 @@ namespace FruitMachineDing
                         int id;
                         if (Int32.TryParse(message.Substring(message.IndexOf(":") + 1), out id))
                         {
-                            po_persoonLbl.Text = persoon.GiveName(connectionString, id);
+                            string persoonnaam = persoon.GiveName(connectionString, id);
+                            po_persoonLbl.Text = persoonnaam;
+                            serial.SendMessage(persoonnaam);
                         }
                     }
                     // Else if message =... etc. 
