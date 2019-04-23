@@ -1,4 +1,5 @@
 #include <EVShield.h>
+#include <Wire.h>
 
 uint8_t ID = 2;
 #define buttonPin1 7
@@ -16,6 +17,7 @@ int nextDisk = 2;
 void setup() {
   Serial.begin(9600);
   StartFingerprintscanner();
+  Wire.begin();
   evshield.init( SH_HardwareI2C );
   evshield.bank_a.motorReset();
   evshield.bank_b.motorReset();
@@ -34,7 +36,12 @@ void loop() {
   UseMessage(message);
 
   if (message.startsWith("ADD_FINGERPRINT:") !=  true && millis() > endTimeFingerprint) {
-    ReadFingerprint();
+    if(ReadFingerprint() != -1){
+      Wire.beginTransmission(9);
+      Wire.write("|FINGERPRINT:BOB&");
+      Wire.endTransmission();
+    }
+    
     endTimeFingerprint = millis() + 50;
   }
 
