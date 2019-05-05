@@ -12,10 +12,14 @@ namespace FruitMachineDing
 
         Serial serial = new Serial("COM11", 9600, new MessageBuilder('|', '&'));
         Fruitmachine fruitmachine = new Fruitmachine();
-        Fruit Fruit = new Fruit();
-        Persoon persoon = new Persoon();
+        SQL.Fruit Fruit = new SQL.Fruit();
+        SQL.Persoon Persoon = new SQL.Persoon();
+        SQL.Portie Portie = new SQL.Portie();
+        SQL.Vitamines Vitamines = new SQL.Vitamines();
+        desktop.PortieTab PortieTab = new desktop.PortieTab();
+        desktop.PersoonTab PersoonTab = new desktop.PersoonTab();
+        desktop.FruitTab FruitTab = new desktop.FruitTab();
         bool stand = true;
-        Portie portie1 = new Portie();
         List<string> portie = new List<string>();
         List<string> fruit = new List<string>();
         List<string> personen = new List<string>();
@@ -32,8 +36,8 @@ namespace FruitMachineDing
 
         private void FruitSnijden_Load(object sender, EventArgs e)
         {
-            personen = persoon.GivePersonNames(connectionString);
-            portie = portie1.GiveFruit(connectionString);
+            personen = Persoon.GivePersonNames(connectionString);
+            portie = Fruit.GiveFruit(connectionString);
             po_fruitLbx.Items.AddRange(portie.ToArray());
             f_fruitList_lbx.Items.AddRange(portie.ToArray());
             pe_namesLbx.Items.AddRange(personen.ToArray());
@@ -48,13 +52,13 @@ namespace FruitMachineDing
         private void FruitLbx_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             // Adding to the next listbox
-            portie = portie1.AddToList(po_fruitLbx.GetItemText(po_fruitLbx.SelectedItem));
+            portie = PortieTab.AddToList(po_fruitLbx.GetItemText(po_fruitLbx.SelectedItem));
             po_selectedFruitLbx.Items.Clear();
             po_selectedFruitLbx.Items.AddRange(portie.ToArray());
             po_selectedFruitLbx.SetSelected(po_selectedFruitLbx.Items.Count-1, true);
             // Adding Vitamines to the collective/total Vitamine listbox
             po_vitamineLbx.Items.Clear();
-            foreach (var x in Fruit.TotalVitamine(connectionString, po_selectedFruitLbx.Items))
+            foreach (var x in FruitTab.TotalVitamine(connectionString, po_selectedFruitLbx.Items))
             {
                 po_vitamineLbx.Items.Add(x);
             }
@@ -62,7 +66,7 @@ namespace FruitMachineDing
 
         private void selectedFruitLbx_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            portie = portie1.RemoveFromList(Convert.ToString(po_selectedFruitLbx.GetItemText(po_selectedFruitLbx.SelectedItem)));
+            portie = PortieTab.RemoveFromList(Convert.ToString(po_selectedFruitLbx.GetItemText(po_selectedFruitLbx.SelectedItem)));
             po_selectedFruitLbx.Items.Clear();
             po_selectedFruitLbx.Items.AddRange(portie.ToArray());
             try
@@ -71,7 +75,7 @@ namespace FruitMachineDing
             }
             catch (System.ArgumentOutOfRangeException) { }
             po_vitamineLbx.Items.Clear();
-            foreach (var x in Fruit.TotalVitamine(connectionString, po_selectedFruitLbx.Items))
+            foreach (var x in FruitTab.TotalVitamine(connectionString, po_selectedFruitLbx.Items))
             {
                 po_vitamineLbx.Items.Add(x);
             }
@@ -104,7 +108,7 @@ namespace FruitMachineDing
         // Persoon Tab
         private void pe_namesLbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pe_leeftijdInputLbl.Text = Convert.ToString(persoon.GiveAge(connectionString, pe_namesLbx.GetItemText(pe_namesLbx.SelectedItem)));
+            pe_leeftijdInputLbl.Text = Convert.ToString(Persoon.GiveAge(connectionString, pe_namesLbx.GetItemText(pe_namesLbx.SelectedItem)));
             pe_naamInputLbl.Text = pe_namesLbx.GetItemText(pe_namesLbx.SelectedItem);
         }
 
@@ -114,7 +118,7 @@ namespace FruitMachineDing
         {
             {
                 f_vitaminesSelectedFruit_lbx.Items.Clear();
-                foreach (string x in Fruit.GetVitamins(connectionString, f_fruitList_lbx.SelectedItem.ToString()))
+                foreach (string x in Vitamines.GetVitamins(connectionString, f_fruitList_lbx.SelectedItem.ToString()))
                 {
                     f_vitaminesSelectedFruit_lbx.Items.Add(x);
                 }
@@ -125,7 +129,7 @@ namespace FruitMachineDing
 
         private void f_vitaminesSelectedFruit_lbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            f_vitamineInfo_rtb.Text = Fruit.GetVitamineDesc(connectionString, f_vitaminesSelectedFruit_lbx.SelectedItem.ToString());
+            f_vitamineInfo_rtb.Text = Vitamines.GetVitamineDesc(connectionString, f_vitaminesSelectedFruit_lbx.SelectedItem.ToString());
         }
 
         // Seriele communicatie
@@ -148,7 +152,7 @@ namespace FruitMachineDing
                         int id;
                         if (Int32.TryParse(message.Substring(message.IndexOf(":") + 1), out id))
                         {
-                            string persoonnaam = persoon.GiveName(connectionString, id);
+                            string persoonnaam = Persoon.GiveName(connectionString, id);
                             po_persoonLbl.Text = persoonnaam;
                             serial.SendMessage(persoonnaam);
                         }
