@@ -1,3 +1,10 @@
+//--FINGERPRINT--
+//---------------
+// BLACK - GND
+// RED - 5V
+// GREEN - 2
+// WHITE - 4
+//---------------
 #include <EVShield.h>
 #include <Wire.h>
 
@@ -13,6 +20,7 @@ int button2Value;
 unsigned long endTimeMotor;
 unsigned long endTimeFingerprint = 0;
 int nextDisk = 2;
+bool fingerprintDetected = false;
 
 void setup() {
   Serial.begin(9600);
@@ -21,40 +29,44 @@ void setup() {
   evshield.init( SH_HardwareI2C );
   evshield.bank_a.motorReset();
   evshield.bank_b.motorReset();
-  evshield.bank_a.motorRunDegrees(SH_Motor_2,
-                                    SH_Direction_Forward,
-                                    100,
-                                    200,
-                                    SH_Completion_Wait_For, //BLOCKING
-                                    SH_Next_Action_BrakeHold);
+
 }
 
 void loop() {
-  button1Value = digitalRead(buttonPin1);
-  button2Value = digitalRead(buttonPin2);
+  //button1Value = digitalRead(buttonPin1);
+  //button2Value = digitalRead(buttonPin2);
   String message = CheckMessage();
   UseMessage(message);
 
   if (message.startsWith("ADD_FINGERPRINT:") !=  true && millis() > endTimeFingerprint) {
-    if(ReadFingerprint() != -1){
-      Wire.beginTransmission(9);
-      Wire.write("|FINGERPRINT:BOB&");
-      Wire.endTransmission();
+    if (ReadFingerprint() != -1) {
+      fingerprintDetected = true;
+      Serial.println("true");
     }
-    
+
     endTimeFingerprint = millis() + 50;
   }
 
-  if(button1Value == HIGH){
+  if (button1Value == HIGH) {
     SwitchDisk(nextDisk);
   }
 
-  if(button2Value == HIGH){
+  if (button2Value == HIGH) {
     SwitchWeightMotorOn();
   }
-  
-  WeigthMotorMove();
-  
-  
-  
+
+  if (fingerprintDetected && message.startsWith("FINGERPRINT:")) {
+    char messageChar[20];
+    message = "|" + message + "&";
+    message.toCharArray(messageChar, 20);
+    Wire.beginTransmission(9);
+    for (int i = 0; i < 20; i++) {
+      Wire.write(messageChar[i]);
+    }
+    Wire.endTransmission();
+    Serial.println(messageChar);
+    fingerprintDetected = false;
+    Serial.println("false");
+  }
+
 }
