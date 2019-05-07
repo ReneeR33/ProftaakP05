@@ -10,16 +10,16 @@ namespace FruitMachineDing.desktop
     {
         List<string> portie = new List<string>();
 
-        public List<string> AddToList(string Fruit)
+        public List<string> AddToList(string fruit)
         {
-            portie.Add(Fruit);
+            portie.Add(fruit);
             return portie;
         }
-        public List<string> RemoveFromList(string _fruit)
+        public List<string> RemoveFromList(string fruit)
         {
-            if (portie.Contains(_fruit))
+            if (portie.Contains(fruit))
             {
-                portie.RemoveAt(portie.IndexOf(_fruit));
+                portie.RemoveAt(portie.IndexOf(fruit));
             }
             return portie;
         }

@@ -1,5 +1,28 @@
+// --LCD--
+//-----------
+// 5V - 5V
+// MISO - pin 12
+// SCK - pin 13
+// MOSI - pin 11
+// LCD CS - pin 10
+// SD CS - pin 4
+// D/C - pin 9
+// RESET - pin 8
+// BL - 5V
+// GND - GND
+//-----------
+
+// --MASTER--
+//-------------
+// pin A5 - pin A5
+// pin A4 - pin A4
+// GND - GND
+// 5V - 5V
+//-------------
+
 #include <Wire.h>
 String Message = "";
+
 void setup() {
   Wire.begin(9); 
   Wire.onReceive(receive_event);
@@ -16,6 +39,7 @@ void receive_event(int bytes){
     WriteText("hallo", 30, 10, 3);
     Message.remove(0, 12);
     WriteText(Message, 60, 10, 3);
+    delay(3000);
   }
 }
 

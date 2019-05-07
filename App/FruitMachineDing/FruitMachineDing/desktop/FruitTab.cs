@@ -22,13 +22,13 @@ namespace FruitMachineDing.desktop
             }
             foreach (var x in fruitSoorten)
             {
-                //foreach (var y in GetVitamins(connectionString, x))
-                //{
-                //    if (!vitamineLijst.Contains(y))
-                //    {
-                //        vitamineLijst.Add(y);
-                //    }
-                //}
+                foreach (var y in  Vitamines.GetVitamins(connectionString, x))//idk
+                {
+                    if (!vitamineLijst.Contains(y))
+                    {
+                        vitamineLijst.Add(y);
+                    }
+                }
             }
             vitamineLijst.Sort();
             return vitamineLijst;
