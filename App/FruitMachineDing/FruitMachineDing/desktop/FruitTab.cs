@@ -22,7 +22,7 @@ namespace FruitMachineDing.desktop
             }
             foreach (var x in fruitSoorten)
             {
-                foreach (var y in GetVitamins(connectionString, x))
+                foreach (var y in  Vitamines.GetVitamins(connectionString, x))//idk
                 {
                     if (!vitamineLijst.Contains(y))
                     {
