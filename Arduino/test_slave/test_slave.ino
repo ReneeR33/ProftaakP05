@@ -24,25 +24,42 @@
 String Message = "";
 
 void setup() {
-  Wire.begin(9); 
+  Wire.begin(9);
   Wire.onReceive(receive_event);
   StartScreen();
   Serial.begin(9600);
   Serial.println("start");
-  ScreenBegin();
+  //ScreenBegin();
+  ScreenMain();
 }
 
-void receive_event(int bytes){
+void receive_event(int bytes) {
   Message = CheckMessage();
-  Serial.println(Message);
-  if(Message.startsWith("FINGERPRINT:")){
+  //Serial.println(Message);
+  if (Message.startsWith("FINGERPRINT:")) {
     WriteText("hallo", 30, 10, 3);
     Message.remove(0, 12);
     WriteText(Message, 60, 10, 3);
     delay(3000);
+    Refresh();
+    ScreenMain();
+  }
+  else if (Message == "BUTTONPRESSED:1") {
+    Serial.println("BUTTON:1");
+    ScreenMain();
+  }
+  else if (Message == "BUTTONPRESSED:2") {
+    Serial.println("BUTTON:2");
+    ScreenCut();
+  }
+  else if (Message == "BUTTONPRESSED:3") {
+    Serial.println("BUTTON:3");
+  }
+  else if (Message == "BUTTONPRESSED:4") {
+    Serial.println("BUTTON:4");
   }
 }
 
-void loop(){
-  //nope
+void loop() {
+
 }

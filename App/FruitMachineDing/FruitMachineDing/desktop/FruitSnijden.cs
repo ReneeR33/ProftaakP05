@@ -10,7 +10,7 @@ namespace FruitMachineDing
     {
         public string connectionString;
 
-        Serial serial = new Serial("COM10", 9600, new MessageBuilder('|', '&'));
+        Serial serial = new Serial("COM7", 9600, new MessageBuilder('|', '&'));
         Fruitmachine fruitmachine = new Fruitmachine();
         SQL.Fruit Fruit = new SQL.Fruit();
         SQL.Persoon Persoon = new SQL.Persoon();

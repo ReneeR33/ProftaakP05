@@ -51,7 +51,7 @@ void loop() {
   String message = CheckMessage();
   UseMessage(message);
 
-  if (message.startsWith("ADD_FINGERPRINT:") !=  true && millis() > endTimeFingerprint) {
+  if (message.startsWith("ADD_FINGERPRINT:") !=  false && millis() > endTimeFingerprint) {
     if (ReadFingerprint() != -1) {
       fingerprintDetected = true;
       Serial.println("true");
@@ -63,20 +63,20 @@ void loop() {
   if (button1Value == HIGH || button2Value == HIGH || button3Value == HIGH || button4Value == HIGH) {
     Wire.beginTransmission(9);
     if (button1Value == HIGH) {
-      Serial.println("BUTTON1");
-      Wire.write("BUTTONPRESSED:1");
+      //Serial.println("BUTTON1");
+      Wire.write("|BUTTONPRESSED:1&");
     }
     else if (button2Value == HIGH) {
-      Serial.println("BUTTON2");
-      Wire.write("BUTTONPRESSED:2");
+      //Serial.println("BUTTON2");
+      Wire.write("|BUTTONPRESSED:2&");
     }
     else if (button3Value == HIGH) {
-      Serial.println("BUTTON3");
-      Wire.write("BUTTONPRESSED:3");
+      //Serial.println("BUTTON3");
+      Wire.write("|BUTTONPRESSED:3&");
     }
     else if (button4Value == HIGH) {
-      Serial.println("BUTTON4");
-      Wire.write("BUTTONPRESSED:4");
+      //Serial.println("BUTTON4");
+      Wire.write("|BUTTONPRESSED:4&");
     }
     Wire.endTransmission();
     delay(300);
