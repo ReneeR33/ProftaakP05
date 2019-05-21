@@ -19,7 +19,6 @@ namespace FruitMachineDing
         desktop.PortieTab PortieTab = new desktop.PortieTab();
         desktop.PersoonTab PersoonTab = new desktop.PersoonTab();
         desktop.FruitTab FruitTab = new desktop.FruitTab();
-        bool stand = true;
         List<string> portie = new List<string>();
         List<string> fruit = new List<string>();
         List<string> personen = new List<string>();
@@ -95,13 +94,12 @@ namespace FruitMachineDing
 
         private void snijschijfBtn_Click(object sender, EventArgs e)
         {
-            snijschijfInputLbl.Text = fruitmachine.switchCuttingDisk().ToString();
-            serial.SendMessage("SWITCH_DISK:"+Convert.ToString(fruitmachine.disk));
+            snijschijfInputLbl.Text = fruitmachine.switchCuttingDisk(serial).ToString();
         }
 
         private void BevestigingPanel_VisibleChanged(object sender, EventArgs e)
         {
-            snijschijfInputLbl.Text = fruitmachine.switchCuttingDisk().ToString();
+            snijschijfInputLbl.Text = fruitmachine.switchCuttingDisk(serial).ToString();
         }
 
 
@@ -164,7 +162,7 @@ namespace FruitMachineDing
 
         private void persBtn_Click(object sender, EventArgs e)
         {
-            stand = fruitmachine.FruitCut(serial, stand);
+            fruitmachine.FruitCut(serial);
         }
     }
 }
