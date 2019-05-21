@@ -10,8 +10,9 @@ namespace FruitMachineDing
     {
 
         public int disk = 1;
+        public bool stand = true;
         
-        public int switchCuttingDisk()
+        public int switchCuttingDisk(Serial serial)
         {
             if (disk == 3)
             {
@@ -21,10 +22,11 @@ namespace FruitMachineDing
             {
                 disk++;
             }
+            serial.SendMessage("SWITCH_DISK:" + Convert.ToString(disk));
             return disk;
         }
 
-        public bool FruitCut(Serial serial, bool stand)
+        public bool FruitCut(Serial serial)
         {
             if (stand)
             {
