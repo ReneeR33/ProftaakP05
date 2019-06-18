@@ -93,7 +93,13 @@ void ScreenCut() {
 
 }
 
-void ScreenCutAdd(){
-   Refresh();
+void ScreenCutAdd() {
+  Refresh();
+  myScreen.stroke(255, 255, 255);
+  WriteText("+", 5, 0, 1);
+  WriteText("Clear", 5, 130, 1);
+  WriteText("Cut", 115, 140, 1);
+  WriteText("Done", 115, 0, 1);
+  WriteText("Cut", 50, 30, 2);
 }
 //////////////////////////
