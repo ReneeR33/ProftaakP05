@@ -61,6 +61,7 @@
             this.f_fruitList_lbx = new System.Windows.Forms.ListBox();
             this.PersoonLbx = new System.Windows.Forms.ListBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.tab_history = new System.Windows.Forms.TabPage();
             this.FruitSelectTab.SuspendLayout();
             this.tab_porties.SuspendLayout();
             this.BevestigingPanel.SuspendLayout();
@@ -76,6 +77,7 @@
             this.FruitSelectTab.Controls.Add(this.tab_porties);
             this.FruitSelectTab.Controls.Add(this.tab_personen);
             this.FruitSelectTab.Controls.Add(this.tab_fruitInfo);
+            this.FruitSelectTab.Controls.Add(this.tab_history);
             this.FruitSelectTab.Location = new System.Drawing.Point(0, 0);
             this.FruitSelectTab.Margin = new System.Windows.Forms.Padding(2);
             this.FruitSelectTab.Name = "FruitSelectTab";
@@ -417,6 +419,16 @@
             this.timer.Enabled = true;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // tab_history
+            // 
+            this.tab_history.Location = new System.Drawing.Point(4, 22);
+            this.tab_history.Name = "tab_history";
+            this.tab_history.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_history.Size = new System.Drawing.Size(668, 353);
+            this.tab_history.TabIndex = 3;
+            this.tab_history.Text = "History";
+            this.tab_history.UseVisualStyleBackColor = true;
+            // 
             // FruitSnijden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -477,6 +489,7 @@
         private System.Windows.Forms.RichTextBox f_fruitInfo_rtb;
         private System.Windows.Forms.RichTextBox f_vitamineInfo_rtb;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TabPage tab_history;
     }
 }
 
