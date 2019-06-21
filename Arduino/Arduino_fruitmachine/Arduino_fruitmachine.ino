@@ -29,6 +29,7 @@ unsigned long endTimeFingerprint = 0;
 int nextDisk = 2;
 bool fingerprintDetected = false;
 
+
 void setup() {
   pinMode(buttonPin1, INPUT);
   pinMode(buttonPin2, INPUT);
@@ -64,7 +65,15 @@ void loop() {
   if (button1Value == HIGH || button2Value == HIGH || button3Value == HIGH || button4Value == HIGH) {
     Wire.beginTransmission(9);
     if (button1Value == HIGH) {
-      //Serial.println("BUTTON1");
+      if (screen == "CUT") {
+        Wire.write("|SCREEN:CUT_ADD&");
+        screen = "CUT_ADD";
+      }
+      else if(screen == "CUT_ADD"){
+        String message = "bal";
+        Serial.println(String(message.length()));
+        
+      }
 
     }
     else if (button2Value == HIGH) {
@@ -75,6 +84,10 @@ void loop() {
       if (screen == "CUT") {
         Wire.write("|SCREEN:MAIN&");
         screen = "MAIN";
+      }
+      else if(screen == "CUT_ADD"){
+        Wire.write("|SCREEN:CUT&");
+        screen = "CUT";
       }
     }
     else if (button4Value == HIGH) {

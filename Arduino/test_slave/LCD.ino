@@ -86,20 +86,22 @@ void ScreenCut() {
   WriteText("Quit", 115, 0, 1);
   WriteText("Cut", 50, 30, 2);
   myScreen.stroke(255, 238, 76);
-  WriteText("Fruit", 30, 90, 1);
-  WriteText("Fruit", 40, 90, 1);
-  WriteText("Fruit", 40, 90, 1);
-  WriteText("Fruit", 50, 90, 1);
+  //WriteText("Fruit", 30, 90, 1);
+  //WriteText("Fruit", 40, 90, 1);
+  //WriteText("Fruit", 50, 90, 1);
 
 }
 
 void ScreenCutAdd() {
   Refresh();
   myScreen.stroke(255, 255, 255);
-  WriteText("+", 5, 0, 1);
-  WriteText("Clear", 5, 130, 1);
-  WriteText("Cut", 115, 140, 1);
+  WriteText("+", 5, 5, 2);
+  WriteText("-", 5, 140, 2);
+  WriteText("Next", 115, 135, 1);
   WriteText("Done", 115, 0, 1);
   WriteText("Cut", 50, 30, 2);
+  WriteText("Strawberry", 50, 75, 1);
+  myScreen.stroke(255, 238, 76);
+  WriteText("X2", 60, 75, 2);
 }
 //////////////////////////
