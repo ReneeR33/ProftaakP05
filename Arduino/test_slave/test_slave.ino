@@ -44,20 +44,7 @@ void receive_event(int bytes) {
     Refresh();
     ScreenMain();
   }
-  else if (Message == "BUTTONPRESSED:1") {
-    Serial.println("BUTTON:1");
-    
-  }
-  else if (Message == "BUTTONPRESSED:2") {
-    Serial.println("BUTTON:2");
-    
-  }
-  else if (Message == "BUTTONPRESSED:3") {
-    Serial.println("BUTTON:3");
-  }
-  else if (Message == "BUTTONPRESSED:4") {
-    Serial.println("BUTTON:4");
-  }
+  
   else if(Message == "SCREEN:MAIN"){
     ScreenMain();
     Serial.println("MAIN");
@@ -70,6 +57,10 @@ void receive_event(int bytes) {
     ScreenCutAdd();
     Serial.println("ADD");
   }
+  else if(Message == "SCREEN:CUT_ADD"){
+    
+  }
+  
 }
 
 void loop() {
