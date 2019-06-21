@@ -19,6 +19,7 @@ uint8_t ID = 2;
 EVShield  evshield(0x34, 0x36);
 
 String Message = "";
+String screen = "MAIN";
 int button1Value;
 int button2Value;
 int button3Value;
@@ -64,19 +65,23 @@ void loop() {
     Wire.beginTransmission(9);
     if (button1Value == HIGH) {
       //Serial.println("BUTTON1");
-      Wire.write("|BUTTONPRESSED:1&");
+
     }
     else if (button2Value == HIGH) {
       //Serial.println("BUTTON2");
       Wire.write("|BUTTONPRESSED:2&");
     }
     else if (button3Value == HIGH) {
-      //Serial.println("BUTTON3");
-      Wire.write("|BUTTONPRESSED:3&");
+      if (screen == "CUT") {
+        Wire.write("|SCREEN:MAIN&");
+        screen = "MAIN";
+      }
     }
     else if (button4Value == HIGH) {
-      //Serial.println("BUTTON4");
-      Wire.write("|BUTTONPRESSED:4&");
+      if (screen == "MAIN") {
+        Wire.write("|SCREEN:CUT&");
+        screen = "CUT";
+      }
     }
     Wire.endTransmission();
     delay(300);
