@@ -1,12 +1,9 @@
-String currentFruit;
-String fruitToCut[6];
-int amount = 1;
+int fruitIndex = 0;
 
 void AddFruit(){
-  for(int i = 0; i < 6; i++){
-    if(fruitToCut[i] == ""){
-      fruitToCut[i] = currentFruit + ":" + String(amount);
-    }
+  if(fruitIndex != 6){
+    fruitToCut[fruitIndex] = currentFruit + ":" + String(amount);
+    fruitIndex++;
   }
 }
 

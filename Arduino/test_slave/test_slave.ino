@@ -57,8 +57,10 @@ void receive_event(int bytes) {
     ScreenCutAdd();
     Serial.println("ADD");
   }
-  else if(Message == "SCREEN:CUT_ADD"){
-    
+  else if(Message.startsWith("FRUIT_AMOUNT:")){
+    Message.replace("FRUIT_AMOUNT:", "");
+    Serial.println(Message);
+    UpdateFruitAmount(Message);
   }
   
 }

@@ -9,11 +9,11 @@ TFT myScreen = TFT(CS, DC, RESET);
 
 int previousSize;
 int previousRow;
-int previousSpace;
+int previousColumn;
 char printout[5];
 char previous[5];
 
-unsigned long LCDEndTime;
+//unsigned long LCDEndTime;
 
 void StartScreen() {
   myScreen.begin();
@@ -22,25 +22,25 @@ void StartScreen() {
   myScreen.stroke(255, 255, 255);
 }
 
-void WriteDynamicText(String string, int row, int space, int textSize) {
-  if (millis() > LCDEndTime) {
-    LCDEndTime = millis() + 1000;
-    string.toCharArray(printout, 5);
-    if (previous[0] != NULL) {
-      myScreen.stroke(0, 0, 0);
-      myScreen.setTextSize(previousSize);
-      myScreen.text(previous, previousSpace, previousRow);
-    }
-    myScreen.stroke(255, 255, 255);
-    myScreen.setTextSize(textSize);
-    myScreen.text(printout, space, row);
-    int i;
-    for (i = 4; i >= 0; i -= 1) {
-      previous[i] = printout[i];
-    }
-    previousSize = textSize;
-    previousRow = row;
+void WriteDynamicText(String string, int row, int column, int textSize) {
+  
+  string.toCharArray(printout, 5);
+  if (previous[0] != NULL) {
+    Serial.println("yep");
+    myScreen.stroke(0, 0, 0);
+    myScreen.setTextSize(previousSize);
+    myScreen.text(previous, previousColumn, previousRow);
   }
+  myScreen.stroke(255, 238, 76);
+  myScreen.setTextSize(textSize);
+  myScreen.text(printout, column, row);
+  int i;
+  for (i = 4; i >= 0; i -= 1) {
+    previous[i] = printout[i];
+  }
+  previousSize = textSize;
+  previousRow = row;
+  previousColumn = column;
 
 }
 
@@ -53,6 +53,11 @@ void WriteText(String string, int row, int column, int textSize) {
 
 void Refresh() {
   myScreen.background(0, 0, 0);
+}
+
+void UpdateFruitAmount(String amount) {
+  amount = "X" + amount;
+  WriteDynamicText(amount, 60, 75, 2);
 }
 
 //Screen layout/refresh
@@ -102,6 +107,7 @@ void ScreenCutAdd() {
   WriteText("Cut", 50, 30, 2);
   WriteText("Strawberry", 50, 75, 1);
   myScreen.stroke(255, 238, 76);
-  WriteText("X2", 60, 75, 2);
+  //WriteText("X2", 60, 75, 2);
+  WriteDynamicText("X1", 60, 75, 2);
 }
 //////////////////////////

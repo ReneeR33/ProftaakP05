@@ -29,6 +29,11 @@ unsigned long endTimeFingerprint = 0;
 int nextDisk = 2;
 bool fingerprintDetected = false;
 
+//interface
+String currentFruit;
+String fruitToCut[6];
+int amount = 1;
+
 
 void setup() {
   pinMode(buttonPin1, INPUT);
@@ -70,15 +75,18 @@ void loop() {
         screen = "CUT_ADD";
       }
       else if(screen == "CUT_ADD"){
-        String message = "bal";
-        Serial.println(String(message.length()));
-        
+        AddAmount();
+        String message = "|FRUIT_AMOUNT:" + String(amount) + "&";
+        SendToSlave(message);
       }
 
     }
     else if (button2Value == HIGH) {
-      //Serial.println("BUTTON2");
-      Wire.write("|BUTTONPRESSED:2&");
+      if(screen == "CUT_ADD"){
+        RetractAmount();
+        String message = "|FRUIT_AMOUNT:" + String(amount) + "&";
+        SendToSlave(message);
+      }
     }
     else if (button3Value == HIGH) {
       if (screen == "CUT") {
