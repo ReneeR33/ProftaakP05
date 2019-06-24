@@ -30,7 +30,11 @@ namespace FruitMachineDing
             connectionString = ConfigurationManager.ConnectionStrings["FruitMachineDing.Properties.Settings.FruitDBConnectionString"].ConnectionString;
             this.FormClosed += new FormClosedEventHandler(FormFruitSnijden_FormClosed);
             po_persoonLbl.Text = "";
-            serial.Connect();
+            string ArduinoConnected = System.IO.File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"ArduinoConnect.txt");
+            if (ArduinoConnected == "true")
+            {
+                serial.Connect();
+            }
         }
 
         private void FruitSnijden_Load(object sender, EventArgs e)
@@ -40,6 +44,7 @@ namespace FruitMachineDing
             po_fruitLbx.Items.AddRange(portie.ToArray());
             f_fruitList_lbx.Items.AddRange(portie.ToArray());
             pe_namesLbx.Items.AddRange(personen.ToArray());
+            lbHistoryPersonen.Items.AddRange(personen.ToArray());
 
             po_fruitLbx.SetSelected(0, true);
             pe_namesLbx.SetSelected(0, true);
@@ -163,6 +168,38 @@ namespace FruitMachineDing
         private void persBtn_Click(object sender, EventArgs e)
         {
             fruitmachine.FruitCut(serial);
+        }
+
+        //History Tab
+        private void lbHistoryPersonen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbHistoryPorties.Items.Clear();
+            foreach (string x in Portie.GetPorties(connectionString, lbHistoryPersonen.SelectedItem.ToString()))
+            {
+                lbHistoryPorties.Items.Add(x);
+            }
+            lbHistoryPorties.SetSelected(0, true);
+        }
+
+        private void lbHistoryPorties_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbHistoryPortieContents.Items.Clear();
+            lblHistoryDate.Text = Portie.GetDate(connectionString, lbHistoryPorties.SelectedItem.ToString());
+            foreach(string x in Fruit.GiveFruit(connectionString, lbHistoryPorties.SelectedItem.ToString()))
+            {
+                lbHistoryPortieContents.Items.Add(x);
+            }
+            //lbHistoryPortieContents.SetSelected(0, true);
+        }
+
+        private void tab_history_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

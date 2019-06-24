@@ -59,14 +59,23 @@
             this.Label1 = new System.Windows.Forms.Label();
             this.f_vitaminesSelectedFruit_lbx = new System.Windows.Forms.ListBox();
             this.f_fruitList_lbx = new System.Windows.Forms.ListBox();
+            this.tab_history = new System.Windows.Forms.TabPage();
             this.PersoonLbx = new System.Windows.Forms.ListBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.tab_history = new System.Windows.Forms.TabPage();
+            this.lblHistoryPersonen = new System.Windows.Forms.Label();
+            this.lbHistoryPersonen = new System.Windows.Forms.ListBox();
+            this.lbHistoryPorties = new System.Windows.Forms.ListBox();
+            this.lblHistoryPorties = new System.Windows.Forms.Label();
+            this.lbHistoryPortieContents = new System.Windows.Forms.ListBox();
+            this.lblHistoryFruit = new System.Windows.Forms.Label();
+            this.lblHistoryDateEaten = new System.Windows.Forms.Label();
+            this.lblHistoryDate = new System.Windows.Forms.Label();
             this.FruitSelectTab.SuspendLayout();
             this.tab_porties.SuspendLayout();
             this.BevestigingPanel.SuspendLayout();
             this.tab_personen.SuspendLayout();
             this.tab_fruitInfo.SuspendLayout();
+            this.tab_history.SuspendLayout();
             this.SuspendLayout();
             // 
             // FruitSelectTab
@@ -407,6 +416,25 @@
             this.f_fruitList_lbx.TabIndex = 2;
             this.f_fruitList_lbx.SelectedIndexChanged += new System.EventHandler(this.f_fruitList_lbx_SelectedIndexChanged);
             // 
+            // tab_history
+            // 
+            this.tab_history.Controls.Add(this.lblHistoryDate);
+            this.tab_history.Controls.Add(this.lblHistoryDateEaten);
+            this.tab_history.Controls.Add(this.lblHistoryFruit);
+            this.tab_history.Controls.Add(this.lbHistoryPortieContents);
+            this.tab_history.Controls.Add(this.lblHistoryPorties);
+            this.tab_history.Controls.Add(this.lbHistoryPorties);
+            this.tab_history.Controls.Add(this.lbHistoryPersonen);
+            this.tab_history.Controls.Add(this.lblHistoryPersonen);
+            this.tab_history.Location = new System.Drawing.Point(4, 22);
+            this.tab_history.Name = "tab_history";
+            this.tab_history.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_history.Size = new System.Drawing.Size(668, 353);
+            this.tab_history.TabIndex = 3;
+            this.tab_history.Text = "History";
+            this.tab_history.UseVisualStyleBackColor = true;
+            this.tab_history.Click += new System.EventHandler(this.tab_history_Click);
+            // 
             // PersoonLbx
             // 
             this.PersoonLbx.Location = new System.Drawing.Point(0, 0);
@@ -419,15 +447,77 @@
             this.timer.Enabled = true;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // tab_history
+            // lblHistoryPersonen
             // 
-            this.tab_history.Location = new System.Drawing.Point(4, 22);
-            this.tab_history.Name = "tab_history";
-            this.tab_history.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_history.Size = new System.Drawing.Size(668, 353);
-            this.tab_history.TabIndex = 3;
-            this.tab_history.Text = "History";
-            this.tab_history.UseVisualStyleBackColor = true;
+            this.lblHistoryPersonen.AutoSize = true;
+            this.lblHistoryPersonen.Location = new System.Drawing.Point(4, 33);
+            this.lblHistoryPersonen.Name = "lblHistoryPersonen";
+            this.lblHistoryPersonen.Size = new System.Drawing.Size(55, 13);
+            this.lblHistoryPersonen.TabIndex = 0;
+            this.lblHistoryPersonen.Text = "Personen:";
+            // 
+            // lbHistoryPersonen
+            // 
+            this.lbHistoryPersonen.FormattingEnabled = true;
+            this.lbHistoryPersonen.Location = new System.Drawing.Point(7, 48);
+            this.lbHistoryPersonen.Name = "lbHistoryPersonen";
+            this.lbHistoryPersonen.Size = new System.Drawing.Size(188, 290);
+            this.lbHistoryPersonen.TabIndex = 1;
+            this.lbHistoryPersonen.SelectedIndexChanged += new System.EventHandler(this.lbHistoryPersonen_SelectedIndexChanged);
+            // 
+            // lbHistoryPorties
+            // 
+            this.lbHistoryPorties.FormattingEnabled = true;
+            this.lbHistoryPorties.Location = new System.Drawing.Point(201, 48);
+            this.lbHistoryPorties.Name = "lbHistoryPorties";
+            this.lbHistoryPorties.Size = new System.Drawing.Size(188, 290);
+            this.lbHistoryPorties.TabIndex = 2;
+            this.lbHistoryPorties.SelectedIndexChanged += new System.EventHandler(this.lbHistoryPorties_SelectedIndexChanged);
+            // 
+            // lblHistoryPorties
+            // 
+            this.lblHistoryPorties.AutoSize = true;
+            this.lblHistoryPorties.Location = new System.Drawing.Point(198, 33);
+            this.lblHistoryPorties.Name = "lblHistoryPorties";
+            this.lblHistoryPorties.Size = new System.Drawing.Size(42, 13);
+            this.lblHistoryPorties.TabIndex = 3;
+            this.lblHistoryPorties.Text = "Porties:";
+            // 
+            // lbHistoryPortieContents
+            // 
+            this.lbHistoryPortieContents.FormattingEnabled = true;
+            this.lbHistoryPortieContents.Location = new System.Drawing.Point(396, 100);
+            this.lbHistoryPortieContents.Name = "lbHistoryPortieContents";
+            this.lbHistoryPortieContents.Size = new System.Drawing.Size(112, 238);
+            this.lbHistoryPortieContents.TabIndex = 4;
+            // 
+            // lblHistoryFruit
+            // 
+            this.lblHistoryFruit.AutoSize = true;
+            this.lblHistoryFruit.Location = new System.Drawing.Point(395, 84);
+            this.lblHistoryFruit.Name = "lblHistoryFruit";
+            this.lblHistoryFruit.Size = new System.Drawing.Size(30, 13);
+            this.lblHistoryFruit.TabIndex = 7;
+            this.lblHistoryFruit.Text = "Fruit:";
+            // 
+            // lblHistoryDateEaten
+            // 
+            this.lblHistoryDateEaten.AutoSize = true;
+            this.lblHistoryDateEaten.Location = new System.Drawing.Point(393, 48);
+            this.lblHistoryDateEaten.Name = "lblHistoryDateEaten";
+            this.lblHistoryDateEaten.Size = new System.Drawing.Size(83, 13);
+            this.lblHistoryDateEaten.TabIndex = 10;
+            this.lblHistoryDateEaten.Text = "Datum gegeten:";
+            this.lblHistoryDateEaten.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // lblHistoryDate
+            // 
+            this.lblHistoryDate.AutoSize = true;
+            this.lblHistoryDate.Location = new System.Drawing.Point(483, 48);
+            this.lblHistoryDate.Name = "lblHistoryDate";
+            this.lblHistoryDate.Size = new System.Drawing.Size(53, 13);
+            this.lblHistoryDate.TabIndex = 11;
+            this.lblHistoryDate.Text = "0/0/0000";
             // 
             // FruitSnijden
             // 
@@ -451,6 +541,8 @@
             this.tab_personen.PerformLayout();
             this.tab_fruitInfo.ResumeLayout(false);
             this.tab_fruitInfo.PerformLayout();
+            this.tab_history.ResumeLayout(false);
+            this.tab_history.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -490,6 +582,14 @@
         private System.Windows.Forms.RichTextBox f_vitamineInfo_rtb;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tab_history;
+        private System.Windows.Forms.Label lblHistoryPersonen;
+        private System.Windows.Forms.ListBox lbHistoryPersonen;
+        private System.Windows.Forms.Label lblHistoryDate;
+        private System.Windows.Forms.Label lblHistoryDateEaten;
+        private System.Windows.Forms.Label lblHistoryFruit;
+        private System.Windows.Forms.ListBox lbHistoryPortieContents;
+        private System.Windows.Forms.Label lblHistoryPorties;
+        private System.Windows.Forms.ListBox lbHistoryPorties;
     }
 }
 

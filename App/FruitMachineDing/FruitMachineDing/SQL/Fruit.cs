@@ -51,5 +51,26 @@ namespace FruitMachineDing.SQL
             }
             return fruit;
         }
+
+        public List<string> GiveFruit(string connectionString, string Id)
+        {
+            List<string> fruit = new List<string>();
+            string query = "SELECT Name from Fruit where Id IN (SELECT FruitId FROM ConsumsieInfo WHERE PortieId = @Id)";
+
+            using (SqlConnection conn = new SqlConnection(Convert.ToString(connectionString)))
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@Id", Id);
+                conn.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        fruit.Add(reader.GetString(0));
+                    }
+                }
+            }
+            return fruit;
+        }
     }
 }
