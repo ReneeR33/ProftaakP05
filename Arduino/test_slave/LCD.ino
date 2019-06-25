@@ -78,7 +78,7 @@ void ScreenMain() {
   WriteText("Quit", 115, 0, 1);
   WriteText("Welcome", 50, 40, 2);
   myScreen.stroke(255, 238, 76);
-  WriteText("Bob", 70, 70, 1);
+  WriteText(personName, 70, 70, 1);
 }
 
 // Cut screen:

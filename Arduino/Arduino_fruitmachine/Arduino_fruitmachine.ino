@@ -19,7 +19,7 @@ uint8_t ID = 2;
 EVShield  evshield(0x34, 0x36);
 
 String Message = "";
-String screen = "MAIN";
+String screen = "START";
 int button1Value;
 int button2Value;
 int button3Value;
@@ -57,6 +57,7 @@ void loop() {
   button4Value = digitalRead(buttonPin4);
   String message = CheckMessage();
   UseMessage(message);
+  ReadFingerprint();
 
   if (message.startsWith("ADD_FINGERPRINT:") !=  false && millis() > endTimeFingerprint) {
     if (ReadFingerprint() != -1) {
@@ -68,10 +69,11 @@ void loop() {
   }
 
   if (button1Value == HIGH || button2Value == HIGH || button3Value == HIGH || button4Value == HIGH) {
-    Wire.beginTransmission(9);
+    //Wire.beginTransmission(9);
     if (button1Value == HIGH) {
       if (screen == "CUT") {
-        Wire.write("|SCREEN:CUT_ADD&");
+        //Wire.write("|SCREEN:CUT_ADD&");
+        SendToSlave("|SCREEN:CUT_ADD&");
         screen = "CUT_ADD";
       }
       else if(screen == "CUT_ADD"){
@@ -90,26 +92,30 @@ void loop() {
     }
     else if (button3Value == HIGH) {
       if (screen == "CUT") {
-        Wire.write("|SCREEN:MAIN&");
+        //Wire.write("|SCREEN:MAIN&");
+        SendToSlave("|SCREEN:MAIN&");
         screen = "MAIN";
       }
       else if(screen == "CUT_ADD"){
-        Wire.write("|SCREEN:CUT&");
+        //Wire.write("|SCREEN:CUT&");
+        SendToSlave("|SCREEN:CUT&");
         screen = "CUT";
       }
     }
     else if (button4Value == HIGH) {
       if (screen == "MAIN") {
-        Wire.write("|SCREEN:CUT&");
+        //Wire.write("|SCREEN:CUT&");
+        SendToSlave("|SCREEN:CUT&");
         screen = "CUT";
       }
     }
-    Wire.endTransmission();
+    //Wire.endTransmission();
     delay(300);
   }
 
 
   if (fingerprintDetected && message.startsWith("FINGERPRINT:")) {
+    screen = "MAIN";
     char messageChar[20];
     message = "|" + message + "&";
     message.toCharArray(messageChar, 20);

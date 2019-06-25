@@ -22,6 +22,7 @@
 
 #include <Wire.h>
 String Message = "";
+String personName = "";
 
 void setup() {
   Wire.begin(9);
@@ -30,39 +31,39 @@ void setup() {
   Serial.begin(9600);
   Serial.println("start");
   //ScreenBegin();
-  ScreenMain();
+  //ScreenMain();
 }
 
 void receive_event(int bytes) {
   Message = CheckMessage();
   //Serial.println(Message);
   if (Message.startsWith("FINGERPRINT:")) {
-    WriteText("hallo", 30, 10, 3);
+    //WriteText("hallo", 30, 10, 3);
     Message.remove(0, 12);
-    WriteText(Message, 60, 10, 3);
+    personName = Message;
     delay(3000);
     Refresh();
     ScreenMain();
   }
-  
-  else if(Message == "SCREEN:MAIN"){
+
+  else if (Message == "SCREEN:MAIN") {
     ScreenMain();
     Serial.println("MAIN");
   }
-  else if(Message == "SCREEN:CUT"){
+  else if (Message == "SCREEN:CUT") {
     ScreenCut();
     Serial.println("CUT");
   }
-  else if(Message == "SCREEN:CUT_ADD"){
+  else if (Message == "SCREEN:CUT_ADD") {
     ScreenCutAdd();
     Serial.println("ADD");
   }
-  else if(Message.startsWith("FRUIT_AMOUNT:")){
+  else if (Message.startsWith("FRUIT_AMOUNT:")) {
     Message.replace("FRUIT_AMOUNT:", "");
     Serial.println(Message);
     UpdateFruitAmount(Message);
   }
-  
+
 }
 
 void loop() {
